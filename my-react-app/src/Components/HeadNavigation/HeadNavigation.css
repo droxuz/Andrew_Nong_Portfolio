@@ -3,6 +3,9 @@ body{
 }
 
 .naviBar{
+    background-color: hsl(0, 0%, 95%);
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
 }
@@ -29,5 +32,7 @@ body{
 }
 
 .naviBar a:hover{
-    background-color: hsl(0, 0%, 75%);
+    padding: 2px;
+    border-radius: 3px;
+    background-color: hsl(189, 94%, 90%);
 }

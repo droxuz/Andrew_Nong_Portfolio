@@ -12,17 +12,24 @@ function HeadNavigation(){
                     animate="animate"
                     transition= {{ delay: 0.5, duration: 0.7}}
                     variants={fadeInfromTop}
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {duration: 0.5},
+                    }}
                     href=""
                     >
                         Home
                 </motion.a></li>
-
                 <li>
                     <motion.a
                     initial="initial"
                     animate="animate"
                     transition= {{ delay: 0.5, duration: 0.9}}
                     variants={fadeInfromTop}
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {duration: 0.5},
+                    }}
                     href=""
                     >
                         About
@@ -35,6 +42,10 @@ function HeadNavigation(){
                     animate="animate"
                     transition= {{ delay: 0.5, duration: 1.1}}
                     variants={fadeInfromTop}
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {duration: 0.5},
+                    }}
                     href=""
                     >
                         Projects
@@ -47,6 +58,10 @@ function HeadNavigation(){
                     animate="animate"
                     transition= {{ delay: 0.5, duration: 1.3}}
                     variants={fadeInfromTop}
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {duration: 0.5},
+                    }}
                     href=""
                     >
                         Contact
