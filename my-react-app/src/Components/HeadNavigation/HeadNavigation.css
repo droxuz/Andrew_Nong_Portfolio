@@ -3,7 +3,8 @@ body{
 }
 
 .naviBar{
-    background-color: hsl(0, 0%, 95%);
+    height: 70px;
+    /*background-color: hsl(0, 0%, 95%);*/
     position: sticky;
     top: 0;
     display: flex;
@@ -21,7 +22,7 @@ body{
     background-color: white;
     text-decoration: none;
     display: inline-block;
-    border-bottom-style: solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 5px;
@@ -32,7 +33,7 @@ body{
 }
 
 .naviBar a:hover{
-    padding: 2px;
-    border-radius: 3px;
-    background-color: hsl(189, 94%, 90%);
+    border-bottom: solid;
+    border-width: 2px;
+    border-radius: 1px;
 }
