@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './Components/App/App';
 import HeadNavigation from './Components/HeadNavigation/HeadNavigation';
+import LandingPage from './Components/LandingPage/LandingPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HeadNavigation/>
-    <App/>
+    <LandingPage/>
   </React.StrictMode>
 );
 
