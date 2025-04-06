@@ -16,7 +16,6 @@
     gap: 0.3rem;
 }
 .NavigationBlock {
-    background-color: antiquewhite;
     flex: 1; 
     display: flex;
     flex-direction: column;
@@ -26,14 +25,21 @@
 
 .NavigationBlock ul{
     list-style: none;
-    background-color: aqua;
+    background-color: white;
     text-align: left;
+    margin: 0;
+    margin-top: 50px;
+    
 }
 
 .NavigationBlock a{
     text-decoration: none;
-    border-left: solid;
+    display: inline-block;
+    
+    color: black;
     border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
 }
 
 h1{
