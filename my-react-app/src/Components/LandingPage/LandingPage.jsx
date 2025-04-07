@@ -15,7 +15,7 @@ function LandingPage(){
                         <motion.a
                         whileHover={{
                             scale: 1.2,
-                            transition: {duration: 1},
+                            transition: {duration: 0.75},
                             textShadow: "0px 0px 8px rgb(215, 160, 252)",}}
                         href="">
                         ABOUT
@@ -26,7 +26,7 @@ function LandingPage(){
                         <motion.a 
                         whileHover={{
                             scale: 1.2,
-                            transition: {duration: 1},
+                            transition: {duration: 0.75},
                             textShadow: "0px 0px 8px rgb(215, 160, 252)",}} 
                         href="">
                         PROJECTS
@@ -37,7 +37,7 @@ function LandingPage(){
                         <motion.a 
                         whileHover={{
                             scale: 1.2,
-                            transition: {duration: 0.5},
+                            transition: {duration: 0.75},
                             textShadow: "0px 0px 8px rgb(215, 160, 252)",}} 
                         href="">
                         CONTACT

@@ -5,6 +5,10 @@
     width: 100vw;
 }
 
+.NavigationList{
+    border-left: solid;
+    border-color: black;
+}
 .WelcomeMSG {
     background-color: aliceblue;
     flex: 1; 
@@ -28,6 +32,7 @@
     background-color: white;
     text-align: left;
     margin: 0;
+    padding: 15px;
     margin-top: 50px;
     
 }
@@ -35,7 +40,6 @@
 .NavigationBlock a{
     text-decoration: none;
     display: inline-block;
-    
     color: black;
     border-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
