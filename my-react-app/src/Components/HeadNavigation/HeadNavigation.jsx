@@ -4,14 +4,13 @@ import {motion} from 'framer-motion';
 
 function HeadNavigation(){
     return(
-        <nav class="naviBar">
+        <nav className="naviBar">
             <ul>
                 <li>
                     <motion.a
-                    initial="initial"
-                    animate="animate"
-                    transition= {{ delay: 0.5, duration: 0.7}}
-                    variants={fadeInfromTop}
+                    initial={{y: -50, opacity: 0}}
+                    animate={{y: 0, opacity: 1}}
+                    transition={{delay: 0.5, duration:0.75}}
                     whileHover={{
                         scale: 1.2,
                         transition: {duration: 0.5},
@@ -20,11 +19,11 @@ function HeadNavigation(){
                     href=""
                     >
                         Home
-                </motion.a></li>
+                    </motion.a></li>
                 <li>
                     <motion.a
-                    initial="initial"
-                    animate="animate"
+                    initial={{y: -50, opacity: 0}}
+                    animate={{y: 0, opacity: 1}}
                     transition= {{ delay: 0.5, duration: 0.9}}
                     variants={fadeInfromTop}
                     whileHover={{
@@ -40,8 +39,8 @@ function HeadNavigation(){
 
                 <li>
                     <motion.a
-                    initial="initial"
-                    animate="animate"
+                    initial={{y: -50, opacity: 0}}
+                    animate={{y: 0, opacity: 1}}
                     transition= {{ delay: 0.5, duration: 1.1}}
                     variants={fadeInfromTop}
                     whileHover={{
@@ -57,8 +56,8 @@ function HeadNavigation(){
 
                 <li>
                     <motion.a
-                    initial="initial"
-                    animate="animate"
+                    initial={{y: -50, opacity: 0}}
+                    animate={{y: 0, opacity: 1}}
                     transition= {{ delay: 0.5, duration: 1.3}}
                     variants={fadeInfromTop}
                     whileHover={{

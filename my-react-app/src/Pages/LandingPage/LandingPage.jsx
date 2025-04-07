@@ -1,11 +1,14 @@
 import './LandingPage.css'
+
+import HeadNavigation from '../../Components/HeadNavigation/HeadNavigation';
 import {motion} from 'framer-motion'
 function LandingPage(){
     return(
         <div className="LandingContainer">
+            
             <div className="WelcomeMSG">
-            <h1>Welcome</h1>
-            <p>I am Andrew and this is my portfolio</p>
+            <h1 className='Greeting'>Welcome</h1>
+            <p className='Greeting'>I am Andrew and this is my portfolio</p>
             </div>
             
             <div className="NavigationBlock">

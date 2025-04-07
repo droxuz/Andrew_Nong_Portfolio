@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'OptimusPrincepsSemiBold';
+    src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
+         url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OptimusPrinceps';
+    src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
+         url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 .LandingContainer {
     display: flex;
     flex-direction: row; /* Place WelcomeMSG and Navigation side by side */
@@ -10,7 +28,7 @@
     border-color: black;
 }
 .WelcomeMSG {
-    background-color: aliceblue;
+    background-color: rgb(198, 227, 255);
     flex: 1; 
     display: flex;
     flex-direction: column;
@@ -19,6 +37,11 @@
     padding-right: 1vw;
     gap: 0.3rem;
 }
+
+.Greeting{
+    font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .NavigationBlock {
     flex: 1; 
     display: flex;
@@ -42,7 +65,8 @@
     display: inline-block;
     color: black;
     border-color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
     font-size: 25px;
 }
 
