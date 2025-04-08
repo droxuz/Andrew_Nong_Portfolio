@@ -24,11 +24,11 @@
 }
 
 .NavigationList{
-    border-left: solid;
-    border-color: black;
+    
 }
 .WelcomeMSG {
-    background-color: rgb(198, 227, 255);
+    background: rgb(134,42,5);
+    background: linear-gradient(90deg, rgba(134,42,5,1) -5%, rgb(36, 13, 1) 30%, rgba(6,5,1,1) 62%);
     flex: 1; 
     display: flex;
     flex-direction: column;
@@ -36,10 +36,12 @@
     justify-content: center;
     padding-right: 1vw;
     gap: 0.3rem;
+    
 }
 
 .Greeting{
     font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
 }
 
 .NavigationBlock {
@@ -48,23 +50,24 @@
     flex-direction: column;
     justify-content: center;
     gap: -5px; 
+    background-color: rgb(6, 5, 1);
 }
 
 .NavigationBlock ul{
     list-style: none;
-    background-color: white;
+    background-color: rgb(6, 5, 1);
     text-align: left;
     margin: 0;
     padding: 15px;
-    margin-top: 50px;
-    
+    margin-top: 15px;
+    border-left: solid;
+    border-color: rgba(134,42,5,1);
 }
 
 .NavigationBlock a{
     text-decoration: none;
     display: inline-block;
-    color: black;
-    border-color: black;
+    color: white;
     font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5px;
     font-size: 25px;

@@ -30,7 +30,5 @@
 }
 
 .naviBar a:hover{
-    border-bottom: solid;
-    border-width: 2px;
-    border-radius: 1px;
+    
 }

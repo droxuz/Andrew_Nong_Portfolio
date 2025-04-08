@@ -1,12 +1,12 @@
 import HeadNavigation from "../../Components/HeadNavigation/HeadNavigation";
-import "./AboutPage.css";
+import "./ProjectPage.css"
 
-function AboutPage(){
+function ProjectPage(){
     return(
         <div>
             <HeadNavigation />
-            <h1>This is the about page</h1>
+            <h1>This is the Project Page</h1>
         </div>
     );
 }
-export default AboutPage;
+export default ProjectPage;
