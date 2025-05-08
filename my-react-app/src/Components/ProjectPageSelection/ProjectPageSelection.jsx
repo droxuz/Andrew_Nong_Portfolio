@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {motion, LayoutGroup} from 'framer-motion';
-
+import darksign from '../../Elements/Darksign_29.webp';
 export default function QuadrantCircle({
     size = 600, //Diameter
     colors = ['#e63946', '#f1faee', '#a8dadc', '#457b9d'],
@@ -15,7 +15,6 @@ export default function QuadrantCircle({
   }) {
     const [openIndex, setOpenIndex] = useState(null);
     const radius = size / 2;
-    const halfGap = gap / 2;
   
     // Compute style for each quadrant
     const quadrantStyle = (i) => {
@@ -90,6 +89,7 @@ export default function QuadrantCircle({
                 }}
               >
                 {label}
+                <img src={darksign} alt="" />
               </div>
             </motion.div>
           )
