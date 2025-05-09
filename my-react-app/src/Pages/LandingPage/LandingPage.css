@@ -23,12 +23,10 @@
     width: 100vw;
 }
 
-.NavigationList{
-    
-}
+
 .WelcomeMSG {
     background: rgb(134,42,5);
-    background: linear-gradient(90deg, rgba(134,42,5,1) -5%, rgb(36, 13, 1) 30%, rgba(6,5,1,1) 62%);
+    background: linear-gradient(105deg, rgba(134,42,5,1) -5%, rgb(36, 13, 1) 0%, rgba(6,5,1,1) 70%);
     flex: 1; 
     display: flex;
     flex-direction: column;
