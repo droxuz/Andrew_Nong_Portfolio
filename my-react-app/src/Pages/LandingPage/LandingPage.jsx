@@ -6,8 +6,8 @@ function LandingPage(){
         <div className="LandingContainer">
             
             <div className="WelcomeMSG">
-            <h1 className='Greeting'>Welcome</h1>
-            <p className='Greeting'>I am Andrew and this is my portfolio</p>
+                <h1 className='Greeting'>Welcome</h1>
+                <p></p>
             </div>
             
             <div className="NavigationBlock">

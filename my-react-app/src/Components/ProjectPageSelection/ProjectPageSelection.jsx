@@ -4,7 +4,7 @@ import './ProjectPageSelection.css';
 
 export default function QuadrantCircle({
   sizeVh = 70,
-  colors = ['#e63946', '#f1faee', '#a8dadc', '#457b9d'],
+  colors = ['rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)'],
   labels = ['1', 'Project Two', 'Project Three', '4'],
   modalContents = [
     'Details for quadrant One',
@@ -15,7 +15,9 @@ export default function QuadrantCircle({
   gapVh = 2
 }) {
   const [openIndex, setOpenIndex] = useState(null);
+  
 
+  
   return (
     <LayoutGroup>
       <div className="circleWrap">
@@ -28,14 +30,14 @@ export default function QuadrantCircle({
             {/* Top Panel */}
             {openIndex !== 0 && (
               <motion.div
+                className="quadrantPanel panelTOP"
                 key={0}
-                layoutId="quad-0"
+                layoutId="quad0"
                 layout
-                initial={{ scale: 1 }}
-                animate={{ scale: 1 }}
-                whileHover={{ scale: 1.025}}
-                transition={{ duration: 0.5, type: 'tween'}}
-                className="quadrantPanel panelTL"
+                initial={{ scale: 1, opacity: 0.25, x: 235,  y:0 }}
+                animate={{ scale: 1, opacity: 1, x: 0, y: 0, borderRadius: ["100%", "50%","0%"],borderTopLeftRadius: ["100%","100%"],borderBottomRightRadius:["100%","50%","2.5%"]}}
+                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px -2px 5px rgb(208, 100, 64)"}}
+                transition={{ delay:0.2, duration: 1.5, type: 'tween'}}
                 style={{ backgroundColor: colors[0] }}
                 onClick={() => setOpenIndex(0)}
               >
@@ -47,13 +49,13 @@ export default function QuadrantCircle({
             {openIndex !== 1 && (
               <motion.div
                 key={1}
-                layoutId="quad-1"
+                layoutId="quad1"
                 layout
-                initial={{ scale: 1 }}
-                animate={{ scale: 1 }}
-                whileHover={{ scale: 1.025 }}
-                transition={{ duration: 0.5, type: 'tween' }}
-                className="quadrantPanel panelTR"
+                initial={{ scale: 1, opacity: 0.25, x: 0, y: 235}}
+                animate={{ scale: 1, opacity: 1, x: 0, y: 0 , borderRadius: ["100%", "50%","0%"],borderTopRightRadius: ["100%","100%"],borderBottomLeftRadius:["100%","50%","2.5%"]}}
+                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px -2px 5px rgb(208, 100, 64)"}}
+                transition={{ delay:0.6, duration: 1.5, type: 'tween' }}
+                className="quadrantPanel panelRIGHT"
                 style={{ backgroundColor: colors[1] }}
                 onClick={() => setOpenIndex(1)}
               >
@@ -65,13 +67,13 @@ export default function QuadrantCircle({
             {openIndex !== 2 && (
               <motion.div
                 key={2}
-                layoutId="quad-2"
+                layoutId="quad2"
                 layout
-                initial={{ scale: 1 }}
-                animate={{ scale: 1 }}
-                whileHover={{ scale: 1.025 }}
-                transition={{ duration: 0.5, type: 'tween' }}
-                className="quadrantPanel panelBL"
+                initial={{ scale: 1, opacity: 0.25, x: 0, y: -235}}
+                animate={{ scale: 1, opacity: 1, x: 0, y: 0, borderRadius: ["100%", "50%","0%"],borderBottomLeftRadius: ["100%","100%"],borderTopRightRadius:["100%","50%","2.5%"]}}
+                whileHover={{  scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px 2px 5px rgb(208, 100, 64)"}}
+                transition={{ delay:0.6, duration: 1.5, type: 'tween' }}
+                className="quadrantPanel panelLEFT"
                 style={{ backgroundColor: colors[2] }}
                 onClick={() => setOpenIndex(2)}
               >
@@ -83,13 +85,13 @@ export default function QuadrantCircle({
             {openIndex !== 3 && (
               <motion.div
                 key={3}
-                layoutId="quad-3"
+                layoutId="quad3"
                 layout
-                initial={{ scale: 1 }}
-                animate={{ scale: 1 }}
-                whileHover={{ scale: 1.025 }}
-                transition={{ duration: 0.5, type: 'tween' }}
-                className="quadrantPanel panelBR"
+                initial={{ scale: 1, opacity: 0.25, x: -235, y: 0}}
+                animate={{ scale: 1, opacity: 1, x: 0, y: 0, borderRadius: ["100%", "50%","0%"],borderBottomRightRadius: ["100%","100%"],borderTopLeftRadius:["100%","50%","2.5%"]}}
+                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px 2px 5px rgb(208, 100, 64)"}}
+                transition={{ delay:0.2, duration: 1.5, type: 'tween' }}
+                className="quadrantPanel panelBOTTOM"
                 style={{ backgroundColor: colors[3] }}
                 onClick={() => setOpenIndex(3)}
               >
@@ -99,12 +101,12 @@ export default function QuadrantCircle({
           </div>
         </div>
 
-        {/* Overlay and modal stay outside the rotator */}
+        {/* Modal */}
         {openIndex !== null && (
           <div className="overlay" onClick={() => setOpenIndex(null)}>
             <motion.div
               className="modal"
-              layoutId={`quad-${openIndex}`}
+              layoutId={`quad${openIndex}`}
               layout
               initial={{ scale: 1 }}
               animate={{ scale: 1 }}
