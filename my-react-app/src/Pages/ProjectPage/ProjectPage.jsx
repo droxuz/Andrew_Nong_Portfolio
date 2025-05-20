@@ -2,6 +2,7 @@ import HeadNavigation from "../../Components/HeadNavigation/HeadNavigation";
 import "./ProjectPage.css"
 import darksign from '../../Elements/Darksign_29.webp';
 import ProjectPageSelection from "../../Components/ProjectPageSelection/ProjectPageSelection";
+
 function ProjectPage(){
     return(
         <div className="pageLayout">
