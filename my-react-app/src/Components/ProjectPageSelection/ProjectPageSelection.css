@@ -16,10 +16,16 @@
     font-display: swap;
 }
 .circleWrap{
+  background-image: url('../../Elements/Darksign_29.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 700px;
   position: relative;
   width: var(--size);
   height: var(--size);
   margin: 5vh auto 0;
+  background-color: black;
+  border-radius: 100%;
 }
 .quadrantContainer {
   width: var(--size);
@@ -32,7 +38,6 @@
     "q0 q1"
     "q2 q3";
   gap: var(--gap);
-  background-color:red;
   transform-origin: center center;
 }
   
@@ -113,5 +118,18 @@
   min-width: 150px;
   max-width: 40vw;
   cursor: auto;
+}
+
+.modalHeader{
+
+}
+.modalParagraph{
+
+}
+.modalLink{
+
+}
+.modalButton{
+
 }
   

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
 import './ProjectPageSelection.css';
+import darksign from '../../Elements/Darksign_29.webp';
 
 export default function QuadrantCircle({
   sizeVh = 70,
@@ -11,6 +12,12 @@ export default function QuadrantCircle({
     'Details for quadrant Two',
     'Details for quadrant Three',
     'Details for quadrant Four'
+  ],
+  projectLinks = [
+    {href:" ", label:" "},
+    {href:" ", label:" "},
+    {href:" ", label:" "},
+    {href:" ", label:" "}
   ],
   gapVh = 2,
   
@@ -23,77 +30,77 @@ export default function QuadrantCircle({
 
   
   return (
-    <LayoutGroup>
       <div className="circleWrap" style={{ position: 'relative', width: sizePx, height: sizePx, margin: '5vh auto 0'}}>
         <div className="rotator">
           <div className="quadrantContainer" style={{ '--size': `${sizeVh}vh`, '--gap': `${gapVh}vh` }}>
-            <AnimatePresence initial={true} mode='sync'>
+            <AnimatePresence initial={true} mode='popLayout'>
             {/* Top Panel */}
             {openIndex !== 0 && (
               <motion.div
                 className="quadrantPanel panelTOP"
                 key={0}
-                
                 style={{backgroundColor: colors[1] }}
-                initial={{ scale: 1, opacity: 0.25, x:['53%'],y:['-20.5%'],transition:{duration: 1}, rotate:45}}
-                animate={{ scale: 1, opacity: 1, x:['53%'], y:['-20.5%'], borderRadius: ["100%", "100%","0%"],borderTopLeftRadius: ["100%","100%"],borderBottomRightRadius:["100%","100%","2.5%"], transition:{duration:0.5,type:'tween',ease:'easeIn'},rotate:45}}
-                transition={{ duration:1, type: 'tween',ease:'easeIn'}}
-                exit={{ scale: 1, opacity: 0 ,x:['53%'],y:['-20.5%'], transition:{ type: 'tween', duration:0, ease:'easeOut'}}}  
+
+                initial={{ scale:1, opacity: 0.25, x:['52.5%'],y:['-21.5%'],transition:{duration: 1}, rotate:45}}
+                animate={{ scale:1, opacity: 1, x:['52.5%'], y:['-21.5%'], borderRadius: ["100%", "50%","0%"],borderTopLeftRadius: ["100%","100%"],borderBottomRightRadius:["100%","100%","2.5%"], rotate: 45, transition:{type:'tween', duration:0.5, ease:'easeIn'}}}
+                exit={{ scale:0.5, opacity: 0, x:['52.5%'], y:['-20.5%','25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}  
                 whileHover={{scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px -2px 5px rgb(208, 100, 64)"}}                
                 onClick={() => setOpenIndex(0)}
               >
                 <div className="panelContent">{labels[0]}</div>
               </motion.div>
             )}
-
+            </AnimatePresence>
+            <AnimatePresence>
             {/* Right Panel */}
             {openIndex !== 1 && (
               <motion.div
-                key={1}
-                layoutId="quad1"
-                layout
-                initial={{ scale: 1, opacity: 0.25,}}
-                animate={{ scale: 1, opacity: 1, x: 0, y: 0 , borderRadius: ["100%", "50%","0%"],borderTopRightRadius: ["100%","100%"],borderBottomLeftRadius:["100%","50%","2.5%"],transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
-                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px -2px 5px rgb(208, 100, 64)"}}
-                transition={{ duration: 1.0, type: 'tween', ease: "easeIn"}}
                 className="quadrantPanel panelRIGHT"
+                key={1}
                 style={{ backgroundColor: colors[1] }}
+
+                initial={{ scale: 1, opacity: 0.25, x:['21.5%'], y:['52.5%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['21.5%'], y:['52.5%'], borderRadius: ["100%", "50%","0%"],borderTopRightRadius: ["100%","100%"],borderBottomLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{type:'tween', duration:0.5, ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['21.5%','-21.5%'], y:['52.5%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px -2px 5px rgb(208, 100, 64)"}}
+                
                 onClick={() => setOpenIndex(1)}
               >
                 <div className="panelContent">{labels[1]}</div>
               </motion.div>
             )}
-
+            </AnimatePresence>
+            <AnimatePresence>
             {/* Left Panel */}
             {openIndex !== 2 && (
               <motion.div
                 key={2}
-                layoutId="quad2"
-                layout
-                initial={{ scale: 1, opacity: 0.25}}
-                animate={{ scale: 1, opacity: 1, x:0, y: 0, borderRadius: ["100%", "50%","0%"],borderBottomLeftRadius: ["100%","100%"],borderTopRightRadius:["100%","50%","2.5%"], transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
-                whileHover={{  scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px 2px 5px rgb(208, 100, 64)"}}
-                transition={{ delay:0, duration: 1.0, type: 'tween', ease: "easeIn" }}
                 className="quadrantPanel panelLEFT"
                 style={{ backgroundColor: colors[2] }}
+
+                initial={{ scale: 1, opacity: 0.25, x:['-21.5%'], y:['-52.5%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['-21.5%'], y:['-52.5%'], borderRadius: ["100%", "50%","0%"],borderBottomLeftRadius: ["100%","100%"],borderTopRightRadius:["100%","50%","2.5%"], rotate: 45, transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['-21.5%','25%'], y:['-52.5%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                whileHover={{  scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px 2px 5px rgb(208, 100, 64)"}}
+
                 onClick={() => setOpenIndex(2)}
               >
                 <div className="panelContent">{labels[2]}</div>
               </motion.div>
             )}
-
+            </AnimatePresence>
+            <AnimatePresence>
             {/* Bottom Panel */}
             {openIndex !== 3 && (
               <motion.div
                 key={3}
-                layoutId="quad3"
-                layout={false}
-                initial={{ scale: 1, opacity: 0.25}}
-                animate={{ scale: 1, opacity: 1, x: 0, y: 0, borderRadius: ["100%", "50%","0%"],borderBottomRightRadius: ["100%","100%"],borderTopLeftRadius:["100%","50%","2.5%"], transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
-                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px 2px 5px rgb(208, 100, 64)"}}
-                transition={{ delay:0, duration: 1.0, type: 'tween', ease: "easeIn"}}
                 className="quadrantPanel panelBOTTOM"
                 style={{ backgroundColor: colors[3] }}
+                initial={{ scale: 1, opacity: 0.25, x:['-52.5%'], y:['21.5%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['-52.5%'], y:['21.5%'], borderRadius: ["100%", "50%","0%"],borderBottomRightRadius: ["100%","100%"],borderTopLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['-52.5%'], y:['21.5%','-25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px 2px 5px rgb(208, 100, 64)"}}
+                
                 onClick={() => setOpenIndex(3)}
               >
                 <div className="panelContent">{labels[3]}</div>
@@ -104,7 +111,7 @@ export default function QuadrantCircle({
         </div>
 
         {/* Modal */}
-        <AnimatePresence initial={false} mode='sync'>
+        <AnimatePresence initial={true} mode='sync'>
         {openIndex !== null && (
           <div className="overlay" onClick={() => setOpenIndex(null)}>
             <motion.div
@@ -112,19 +119,20 @@ export default function QuadrantCircle({
               layoutId={`quad${openIndex}`}
               layout
               initial={{ scale: 1 , opacity:1 }}
-              animate={{ scale: 1 , duration: 0, borderRadius:'1%',}}
-              //exit={{ scale: 0, transition:{duration: 0, ease: 'easeOut', opacity:0}}}
-              transition={{ type: 'tween', duration: 0.5, ease:'easeInOut', opacity:0}} 
+              animate={{ scale: 1 , duration: 0, borderRadius:['50%','1%'], transition:{type:'tween',duration:1}}}
+              exit={{ scale: 0, transition:{duration: 0, ease: 'easeOut', opacity:0}}}
+              transition={{ type: 'tween', duration: 5, ease:'easeInOut', opacity:0}} 
               onClick={(e) => e.stopPropagation()}
             >
-              <h2>{labels[openIndex]}</h2>
-              <p>{modalContents[openIndex]}</p>
-              <button onClick={() => setOpenIndex(null)}>Close</button>
+              <h2 className='modalHeader'>{labels[openIndex]}</h2>
+              <p className="modalParagraph">{modalContents[openIndex]}</p>
+              <a className="modalLink"href={projectLinks[openIndex.href]} target="_blank" rel="noopener noreferrer">{projectLinks[openIndex].label}</a>
+              <button className="modalButton" onClick={() => setOpenIndex(null)}>Close</button>
             </motion.div>
           </div>
         )}
         </AnimatePresence>
       </div>
-    </LayoutGroup>
+    
   );
 }
