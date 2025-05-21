@@ -22,9 +22,6 @@
 }
 
 .selectionWheel{
-    background-color: black ;
-}
-.footerLayout{
     flex: 1;
-    background-color: black;
+    background-color: black ;
 }

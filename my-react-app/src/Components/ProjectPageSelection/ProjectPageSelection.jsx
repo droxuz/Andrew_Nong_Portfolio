@@ -9,8 +9,11 @@ export default function QuadrantCircle({
   labels = ['WaterWizard', 'HideoutHelper', 'TiltTerrain', '4'],
   modalContents = [
     'Utilizing an Arduino Grove, water pump, MOSFET, moisture sensor, and some tubing. I have created a automated plant watering system that periodically probes the soil using the moisture sensor and dispenses water through the waterpump. Through Java and the accompanying Firmata and Princeton StdDraw, I am able to control the Arduino Grove board with the aforementioned components, and using Princeton\'s StdDraw I am able to display the moisture level on a continuous graph.',
-    'Details for quadrant Two',
-    'Details for quadrant Three',
+
+    'More of a passion project, I created a web application that from Javascript, CSS, and HTML with the help of Google Firebase to provide a No-SQL database and site hosting. The goal of this project was to learn basic web design while using a database connection. The project itself is used as a helper tool for the online game Escape From Tarkov and helps user keep track of what is needed to upgrade their very own Hideout(A base of operations that provides players with valuable tools and resources).',
+
+    'An academic project with a partner Mayank Neupane, We created a bluetooth controlled car with the help of a DE-10 Lite FGPA board, ESP32 development board, 2 electric motors, and a Motor Driver Controller board. Using Verilog we developed the code to manipulate bits to control the motor, used the on-board 5-axis acclerometer to display tilt of the vehicle, and the arduinoIDE to setup the ESP32 board.',
+
     'Details for quadrant Four'
   ],
   projectLinks = [
@@ -41,9 +44,9 @@ export default function QuadrantCircle({
                 key={0}
                 style={{backgroundColor: colors[1] }}
 
-                initial={{ scale:1, opacity: 0.25, x:['52.5%'],y:['-21.5%'],transition:{duration: 1}, rotate:45}}
-                animate={{ scale:1, opacity: 1, x:['52.5%'], y:['-21.5%'], borderRadius: ["100%", "50%","0%"],borderTopLeftRadius: ["100%","100%"],borderBottomRightRadius:["100%","100%","2.5%"], rotate: 45, transition:{type:'tween', duration:0.5, ease:'easeIn'}}}
-                exit={{ scale:0.5, opacity: 0, x:['52.5%'], y:['-20.5%','25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}  
+                initial={{ scale:1, opacity: 0, x:['53%'],y:['-21.5%'],transition:{duration: 1}, rotate:45}}
+                animate={{ scale:1, opacity: 1, x:['53%'], y:['-21.5%'], borderRadius: ["100%","75%", "50%","25%", "0%"],borderTopLeftRadius: ["100%","100%"],borderBottomRightRadius:["100%","100%","2.5%"], rotate: 45, transition:{type:'tween', delay: 1, duration:1, ease:'easeIn'}}}
+                exit={{ scale:0.5, opacity: 0, x:['53%'], y:['-20.5%','25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}  
                 whileHover={{scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px -2px 5px rgb(208, 100, 64)"}}                
                 onClick={() => setOpenIndex(0)}
               >
@@ -59,9 +62,9 @@ export default function QuadrantCircle({
                 key={1}
                 style={{ backgroundColor: colors[1] }}
 
-                initial={{ scale: 1, opacity: 0.25, x:['21.5%'], y:['52.5%'], transition:{duration:1}, rotate:45}}
-                animate={{ scale: 1, opacity: 1, x:['21.5%'], y:['52.5%'], borderRadius: ["100%", "50%","0%"],borderTopRightRadius: ["100%","100%"],borderBottomLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{type:'tween', duration:0.5, ease:'easeIn'}}}
-                exit={{scale:0.5, opacity:0, x:['21.5%','-21.5%'], y:['52.5%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                initial={{ scale: 1, opacity: 0, x:['21.5%'], y:['53%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['21.5%'], y:['53%'], borderRadius: ["100%","75%", "50%","25%", "0%"],borderTopRightRadius: ["100%","100%"],borderBottomLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{type:'tween', delay: 1, duration:1, ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['21.5%','-21.5%'], y:['53%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
                 whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px -2px 5px rgb(208, 100, 64)"}}
                 
                 onClick={() => setOpenIndex(1)}
@@ -78,9 +81,9 @@ export default function QuadrantCircle({
                 className="quadrantPanel panelLEFT"
                 style={{ backgroundColor: colors[2] }}
 
-                initial={{ scale: 1, opacity: 0.25, x:['-21.5%'], y:['-52.5%'], transition:{duration:1}, rotate:45}}
-                animate={{ scale: 1, opacity: 1, x:['-21.5%'], y:['-52.5%'], borderRadius: ["100%", "50%","0%"],borderBottomLeftRadius: ["100%","100%"],borderTopRightRadius:["100%","50%","2.5%"], rotate: 45, transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
-                exit={{scale:0.5, opacity:0, x:['-21.5%','25%'], y:['-52.5%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                initial={{ scale: 1, opacity: 0, x:['-21.5%'], y:['-53%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['-21.5%'], y:['-53%'], borderRadius: ["100%","75%", "50%","25%", "0%"],borderBottomLeftRadius: ["100%","100%"],borderTopRightRadius:["100%","50%","2.5%"], rotate: 45, transition:{type:'tween', delay: 1, duration:1, ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['-21.5%','25%'], y:['-53%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
                 whileHover={{  scale: 1.025 , transition:{duration: 0.5}, boxShadow: "-2px 2px 5px rgb(208, 100, 64)"}}
 
                 onClick={() => setOpenIndex(2)}
@@ -96,9 +99,9 @@ export default function QuadrantCircle({
                 key={3}
                 className="quadrantPanel panelBOTTOM"
                 style={{ backgroundColor: colors[3] }}
-                initial={{ scale: 1, opacity: 0.25, x:['-52.5%'], y:['21.5%'], transition:{duration:1}, rotate:45}}
-                animate={{ scale: 1, opacity: 1, x:['-52.5%'], y:['21.5%'], borderRadius: ["100%", "50%","0%"],borderBottomRightRadius: ["100%","100%"],borderTopLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{duration:0.5,type:'tween',ease:'easeIn'}}}
-                exit={{scale:0.5, opacity:0, x:['-52.5%'], y:['21.5%','-25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
+                initial={{ scale: 1, opacity: 0, x:['-53%'], y:['21.5%'], transition:{duration:1}, rotate:45}}
+                animate={{ scale: 1, opacity: 1, x:['-53%'], y:['21.5%'], borderRadius: ["100%","75%", "50%","25%", "0%"],borderBottomRightRadius: ["100%","100%"],borderTopLeftRadius:["100%","50%","2.5%"], rotate: 45, transition:{type:'tween', delay: 1, duration:1, ease:'easeIn'}}}
+                exit={{scale:0.5, opacity:0, x:['-53%'], y:['21.5%','-25%'], transition:{default:{type:'tween', duration:1, ease:'easeIn'}}}}
                 whileHover={{ scale: 1.025 , transition:{duration: 0.5}, boxShadow: "2px 2px 5px rgb(208, 100, 64)"}}
                 
                 onClick={() => setOpenIndex(3)}
