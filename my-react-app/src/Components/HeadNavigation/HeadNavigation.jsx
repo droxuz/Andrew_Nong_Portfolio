@@ -1,89 +1,42 @@
-import { fadeInfromTop } from "../../Animations/HeadNavigationAnims";
-import "./HeadNavigation.css";
-import {motion} from 'framer-motion';
+// HeadNavigation.js
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import "./HeadNavigation.css";
 
-function HeadNavigation(){
-    return(
-        <nav className="naviBar">
-            <ul>
-                <li>
-                    <Link to={"/"}>
-                    <motion.a
-                    initial={{y: -50, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition={{delay: 0.5, duration:0.75}}
-                    whileHover={{
-                        scale: 1.2,
-                        transition: {duration: 0.25},
-                        textShadow: "0px 0px 8px rgb(208, 100, 64)",
-                    }}
-                    href=""
-                    >
-                        Home
-                    </motion.a>
-                    </Link>
-                </li>
-                    
-                <li>
-                    <Link to={"/about"}>
-                    <motion.a
-                    initial={{y: -50, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition= {{ delay: 0.5, duration: 0.9}}
-                    variants={fadeInfromTop}
-                    whileHover={{
-                        scale: 1.2,
-                        transition: {duration: 0.25},
-                        textShadow: "0px 0px 8px rgb(208, 100, 64)",
-                    }}
-                    href=""
-                    >
-                        About
-                    </motion.a>
-                    </Link>
-                </li>
+// wrap the router Link so it accepts Framer props
+const MotionLink = motion(Link);
 
-                <li>
-                    <Link to={"/project"}>
-                    <motion.a
-                    initial={{y: -50, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition= {{ delay: 0.5, duration: 1.1}}
-                    variants={fadeInfromTop}
-                    whileHover={{
-                        scale: 1.2,
-                        transition: {duration: 0.25},
-                        textShadow: "0px 0px 8px rgb(208, 100, 64)",
-                    }}
-                    href=""
-                    >
-                        Projects
-                    </motion.a>
-                    </Link>
-                </li>
+function HeadNavigation() {
+  const items = [
+    { to: "/",    label: "Home"    },
+    { to: "/about", label: "About"   },
+    { to: "/project", label: "Projects" },
+    { to: "/contact", label: "Contact" }
+  ];
 
-                <li>
-                    <Link to={"/contact"}>
-                    <motion.a
-                    initial={{y: -50, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition= {{ delay: 0.5, duration: 1.3}}
-                    variants={fadeInfromTop}
-                    whileHover={{
-                        scale: 1.2,
-                        transition: {duration: 0.25},
-                        textShadow: "0px 0px 8px rgb(208, 100, 64)",
-                    }}
-                    href=""
-                    >
-                        Contact
-                    </motion.a>
-                    </Link>
-                </li>
-                
-            </ul>
-        </nav>
-    );
+  return (
+    <nav className="naviBar">
+      <ul>
+        {items.map(({to, label}, i) => (
+          <li key={to}>
+            <MotionLink
+              className="navLink"
+              to={to}
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 + i * 0.1, duration: 0.25 }}
+              whileHover={{
+                scale: 1.1,
+                textShadow: "0 0 8px rgb(208,100,64)"
+              }}
+            >
+              {label}
+            </MotionLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }
+
 export default HeadNavigation;

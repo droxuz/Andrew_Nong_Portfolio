@@ -1,29 +1,70 @@
-
-.naviBar{
-    height: 70px;
-    /*background-color: hsl(0, 0%, 95%);*/
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
+@font-face {
+    font-family: 'OptimusPrincepsSemiBold';
+    src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
+         url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
-.naviBar ul{
-    list-style-type: none;
-    padding: 0px;
-    display:flex;
-    gap: 20px;
+
+@font-face {
+    font-family: 'OptimusPrinceps';
+    src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
+         url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.naviBar {
+  display: flex;
+  width: fit-content;    
+  margin: 0 auto;
+  height: 70px;
+  border: 2px solid white;
+  background-color: rgba(6,5,1,1);
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.naviBar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .naviBar a{
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: rgba(6,5,1,1);
     text-decoration: none;
+    position: relative;
     display: inline-block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 5px;
 }
+
+.naviBar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1px;               
+  height: 2px;               
+  width: 0;                   
+  background: white;  
+  transition: width 0.3s ease-out;
+  transform-origin: left;   
+}
+.naviBar a:hover::after {
+  width: 50%;               
+}
+
 
 .naviBar li{
     float: none;

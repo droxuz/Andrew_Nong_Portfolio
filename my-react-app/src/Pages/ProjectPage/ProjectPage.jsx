@@ -30,20 +30,18 @@ function ProjectPage(){
   }, [])
 
   return (
-    <div className="pageLayout">
-      <HeadNavigation/>
-
-      <div
-        className="selectionWheel"
-        style={{
+    <div className="pageLayout"
+      style={{
           backgroundImage:   circleBg,
           backgroundRepeat:  "no-repeat",
           backgroundPosition:"center",
           backgroundSize:    "cover",
         }}
-      >
-        <ProjectPageSelection/>
-      </div>
+    >
+      <br />
+      <HeadNavigation/>
+      <ProjectPageSelection/>
+      
 
       
     </div>
