@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import HeadNavigation from "../../Components/HeadNavigation/HeadNavigation"
 import ProjectPageSelection from "../../Components/ProjectPageSelection/ProjectPageSelection"
+import ProjectPageParticles from '../../Components/ProjectPageParticles/ProjectPageParticles';
 import "./ProjectPage.css"
 
 function ProjectPage(){
@@ -31,17 +32,14 @@ function ProjectPage(){
 
   return (
     <div className="pageLayout"
-      style={{
-          backgroundImage:   circleBg,
-          backgroundRepeat:  "no-repeat",
-          backgroundPosition:"center",
-          backgroundSize:    "cover",
-        }}
+      
     >
+      <div>
       <br />
+      <ProjectPageParticles/>
       <HeadNavigation/>
       <ProjectPageSelection/>
-      
+      </div>
 
       
     </div>

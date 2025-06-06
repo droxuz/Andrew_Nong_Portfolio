@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
+
 import './ProjectPageSelection.css';
 import darksign from '../../Elements/Darksign_29.webp';
 
