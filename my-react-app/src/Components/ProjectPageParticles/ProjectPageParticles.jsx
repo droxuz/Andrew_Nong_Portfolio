@@ -10,7 +10,6 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 const ProjectPageParticles = (props) => {
 
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -42,29 +41,30 @@ const ProjectPageParticles = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push",
           },
           onHover: {
             enable: true,
-            mode: 'grab',
+            mode: 'attract',
           },
         },
         modes: {
           push: {
-            distance: 200,
-            duration: 15,
+            quantity:5,
           },
-          grab: {
-            distance: 150,
+          attract: {
+            distance: 175,
+            duration: 5,
+            factor:0.5,
           },
         },
       },
       particles: {
         color: {
-          value: "#FFFFFF",
+          value: "rgba(210, 70, 21, 1)",
         },
         links: {
-          color: "#FFFFFF",
+          color: "rgba(0,0,0,0.5)",
           distance: 150,
           enable: true,
           opacity: 0.3,
@@ -77,14 +77,14 @@ const ProjectPageParticles = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 1,
+          speed: 6,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 100,
         },
         opacity: {
           value: 1.0,
@@ -93,7 +93,7 @@ const ProjectPageParticles = (props) => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
