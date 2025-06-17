@@ -15,6 +15,28 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'BenderRegular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../Fonts/Jovanny\ Lemonad\ -\ Bender.woff') format('woff');
+    }
+
+@font-face {
+    font-family: 'BenderLight';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../Fonts/Jovanny\ Lemonad\ -\ Bender-Light.woff') format('woff');
+    }
+
+@font-face {
+    font-family: 'BenderBold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../Fonts/Jovanny\ Lemonad\ -\ Bender-Bold.woff') format('woff');
+    }
+  
 .circleWrap{
   background-image: url('../../Elements/Darksign_29.webp');
   background-repeat: no-repeat;
@@ -112,24 +134,40 @@
   
   
 .modal {
-  background: white;
+  background: rgb(225, 224, 222);
   padding: 24px;
   border-radius: 16px;
   min-width: 150px;
   max-width: 40vw;
   cursor: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modalHeader{
-
+  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .modalParagraph{
+  font-family: 'BenderRegular', 'Times New Roman', Times, serif;
+  font-size: 105%;
 
 }
-.modalLink{
 
+.modalLink{
+  font-family: 'BenderBold', 'Times New Roman', Times, serif; 
+}
+.modalImage{
+  object-fit: center;
+  height: 30vh;
+  width: 60vh;
 }
 .modalButton{
-
+  font-family: 'OptimusPrinceps', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  border-radius: 5%;
+  border-bottom: solid, 1px, rgb(208, 100, 64);
+  padding: 1%;
 }
   

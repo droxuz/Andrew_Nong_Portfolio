@@ -61,7 +61,11 @@ const ProjectPageParticles = (props) => {
       },
       particles: {
         color: {
-          value: "rgba(210, 70, 21, 1)",
+          value: [
+            "rgba(210, 70, 21, 1)",
+            "rgb(207, 39, 2)",
+            "rgb(134, 42, 5)",
+          ] 
         },
         links: {
           color: "rgba(0,0,0,0.5)",
@@ -77,17 +81,21 @@ const ProjectPageParticles = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 6,
+          speed: 5,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 100,
+          value: 125,
         },
         opacity: {
-          value: 1.0,
+          value: [
+            "1.0",
+            "0.5",
+            "0.8",
+          ]
         },
         shape: {
           type: "circle",

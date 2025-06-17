@@ -2,27 +2,34 @@ import React, { useState } from 'react';
 import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
 
 import './ProjectPageSelection.css';
-import darksign from '../../Elements/Darksign_29.webp';
+import HideoutHelperImage from '../../Elements/HideoutHelperImage.png';
 
 export default function QuadrantCircle({
   sizeVh = 70,
   colors = ['rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)'],
-  labels = ['WaterWizard', 'HideoutHelper', 'TiltTerrain', '4'],
+  labels = ['WaterWizard', 'HideoutHelper', 'TiltTerrain', 'Ledgease'],
   modalContents = [
     'Utilizing an Arduino Grove, water pump, MOSFET, moisture sensor, and some tubing. I have created a automated plant watering system that periodically probes the soil using the moisture sensor and dispenses water through the waterpump. Through Java and the accompanying Firmata and Princeton StdDraw, I am able to control the Arduino Grove board with the aforementioned components, and using Princeton\'s StdDraw I am able to display the moisture level on a continuous graph.',
 
-    'More of a passion project, I created a web application that from Javascript, CSS, and HTML with the help of Google Firebase to provide a No-SQL database and site hosting. The goal of this project was to learn basic web design while using a database connection. The project itself is used as a helper tool for the online game Escape From Tarkov and helps user keep track of what is needed to upgrade their very own Hideout(A base of operations that provides players with valuable tools and resources).',
+    'More of a passion project, I created a web application that from Javascript, CSS, and HTML with the help of Google Firebase to provide a Google Firestore a NoSQL database and site hosting. The goal of this project was to learn basic web design while using a database connection. The project itself is used as a helper tool for the online game Escape From Tarkov and helps user keep track of what is needed to upgrade their very own Hideout (A base of operations that provides players with valuable tools and resources).',
 
-    'An academic project with a partner Mayank Neupane, We created a bluetooth controlled car with the help of a DE-10 Lite FGPA board, ESP32 development board, 2 electric motors, and a Motor Driver Controller board. Using Verilog we developed the code to manipulate bits to control the motor, used the on-board 5-axis acclerometer to display tilt of the vehicle, and the arduinoIDE to setup the ESP32 board.',
+    'An academic project with a partner Mayank Neupane, We created a bluetooth controlled car with the help of a DE-10 Lite FGPA board, ESP32 development board, 2 electric motors, and a Motor Driver Controller board. Using Verilog we developed the code to manipulate 2 bits to control the motors, utilizing the DE-10\'s onboard 5 axis accelerometer we were able to control the SPI using clock cycles to gather information from the accelerometer and decode it into the 7 segment display on the DE-10 Lite.',
 
-    'Details for quadrant Four'
+    'A project that I am currently working is a personal financial app that utilizes React frontend, Django backend, while utilizing datascience and ML libraries such as numPy, pandas, and scikit-learn.'
   ],
   projectLinks = [
-    {href:" ", label:" "},
-    {href:" ", label:" "},
-    {href:" ", label:" "},
-    {href:" ", label:" "}
+    {href:"https://github.com/droxuz/PlantWateringSystem", label:"WaterWizard"},
+    {href:"https://hideouthelper-7c1a6.web.app/", label:"HideoutHelper"},
+    {href:"", label:""},
+    {href:"", label:""}
   ],
+
+  projectPhotos = [
+    {src:"" , alt:""},
+    {src:HideoutHelperImage,alt:"HideoutHelperImage"},
+    {src:"",alt:""},
+    {src:"",alt:""}
+    ],
   gapVh = 2,
   
 }) {
@@ -130,8 +137,17 @@ export default function QuadrantCircle({
             >
               <h2 className='modalHeader'>{labels[openIndex]}</h2>
               <p className="modalParagraph">{modalContents[openIndex]}</p>
-              <a className="modalLink"href={projectLinks[openIndex.href]} target="_blank" rel="noopener noreferrer">{projectLinks[openIndex].label}</a>
-              <button className="modalButton" onClick={() => setOpenIndex(null)}>Close</button>
+              <a className="modalLink"href={projectLinks[openIndex].href} target="_blank" rel="noopener noreferrer">{projectLinks[openIndex].label}</a>
+              <br />
+              <img className="modalImage" src={projectPhotos[openIndex].src} alt={projectPhotos[openIndex].alt} />
+              <br />
+              <motion.button 
+                className="modalButton"  
+                onClick={() => setOpenIndex(null)}
+                whileHover={{boxShadow: "0px 0px 7px rgb(208, 100, 64)", scale:1.1, transition:{duration:0.5}}}
+              >
+                Close
+              </motion.button>
             </motion.div>
           </div>
         )}
