@@ -3,6 +3,8 @@ import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
 
 import './ProjectPageSelection.css';
 import HideoutHelperImage from '../../Elements/HideoutHelperImage.png';
+import TiltTerrainImage from '../../Elements/TiltTerrain.jpg';
+import WaterWizard from '../../Elements/WaterWizard.jpg';
 
 export default function QuadrantCircle({
   sizeVh = 70,
@@ -25,9 +27,9 @@ export default function QuadrantCircle({
   ],
 
   projectPhotos = [
-    {src:"" , alt:""},
+    {src:WaterWizardImage , alt:"WaterWizardImage"},
     {src:HideoutHelperImage,alt:"HideoutHelperImage"},
-    {src:"",alt:""},
+    {src:TiltTerrainImage,alt:"TiltTerrainImage"},
     {src:"",alt:""}
     ],
   gapVh = 2,
