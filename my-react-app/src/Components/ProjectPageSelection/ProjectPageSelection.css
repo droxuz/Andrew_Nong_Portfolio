@@ -160,9 +160,21 @@
 }
 .modalImage{
   object-fit: center;
+}
+
+.WaterWizardImageStyle{
+  height: 40vh;
+  width: 30vh;
+}
+.HideoutHelperImageStyle{
   height: 30vh;
   width: 60vh;
 }
+.TiltTerrainImageStyle{
+  height: 40vh;
+  width: 30vh;
+}
+
 .modalButton{
   font-family: 'OptimusPrinceps', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;

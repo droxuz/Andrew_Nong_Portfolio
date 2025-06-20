@@ -4,7 +4,7 @@ import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
 import './ProjectPageSelection.css';
 import HideoutHelperImage from '../../Elements/HideoutHelperImage.png';
 import TiltTerrainImage from '../../Elements/TiltTerrain.jpg';
-import WaterWizard from '../../Elements/WaterWizard.jpg';
+import WaterWizardImage from '../../Elements/WaterWizard.jpg';
 
 export default function QuadrantCircle({
   sizeVh = 70,
@@ -27,9 +27,9 @@ export default function QuadrantCircle({
   ],
 
   projectPhotos = [
-    {src:WaterWizardImage , alt:"WaterWizardImage"},
-    {src:HideoutHelperImage,alt:"HideoutHelperImage"},
-    {src:TiltTerrainImage,alt:"TiltTerrainImage"},
+    {src:WaterWizardImage , alt:"WaterWizardImage", className:"WaterWizardImageStyle"},
+    {src:HideoutHelperImage,alt:"HideoutHelperImage", className:"HideoutHelperImageStyle"},
+    {src:TiltTerrainImage,alt:"TiltTerrainImage", className:"TiltTerrainImageStyle"},
     {src:"",alt:""}
     ],
   gapVh = 2,
@@ -141,7 +141,7 @@ export default function QuadrantCircle({
               <p className="modalParagraph">{modalContents[openIndex]}</p>
               <a className="modalLink"href={projectLinks[openIndex].href} target="_blank" rel="noopener noreferrer">{projectLinks[openIndex].label}</a>
               <br />
-              <img className="modalImage" src={projectPhotos[openIndex].src} alt={projectPhotos[openIndex].alt} />
+              <img className={`modalImage ${projectPhotos[openIndex].className}`} src={projectPhotos[openIndex].src} alt={projectPhotos[openIndex].alt} />
               <br />
               <motion.button 
                 className="modalButton"  

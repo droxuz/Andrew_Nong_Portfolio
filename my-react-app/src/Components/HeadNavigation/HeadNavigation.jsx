@@ -15,7 +15,12 @@ function HeadNavigation() {
   ];
 
   return (
-    <nav className="naviBar">
+    <motion.nav 
+      className="naviBar"
+      initial={{opacity: 0, y: -20}}
+      animate={{opacity: 1, y: 0}}
+      transition={{ delay: 1, duration: 1}}
+    >
       <ul>
         {items.map(({to, label}, i) => (
           <li key={to}>
@@ -24,7 +29,7 @@ function HeadNavigation() {
               to={to}
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 + i * 0.1, duration: 0.25 }}
+              transition={{ delay: 1 + i * 0.1, duration: 0.25 }}
               whileHover={{
                 scale: 1.1,
                 textShadow: "0 0 8px rgb(208,100,64)"
@@ -35,7 +40,7 @@ function HeadNavigation() {
           </li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 
