@@ -1,0 +1,44 @@
+.about-page-profile {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background-color: #1a1a1a;
+  border: 2px solid #cba252;    /* gold frame */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  color: #e0e0e0;
+  font-family: 'OptimusPrinceps', serif; /* or your preferred serif */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+}
+
+.profile-title {
+  font-size: 1.75rem;
+  color: #cba252;
+  margin: 0;
+}
+
+.profile-content {
+  /* nothing special here */
+}
+
+.profile-paragraph {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.profile-separator {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 1rem 0;
+}

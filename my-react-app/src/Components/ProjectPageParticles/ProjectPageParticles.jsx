@@ -81,7 +81,7 @@ const ProjectPageParticles = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 5,
+          speed: 7,
           straight: false,
         },
         number: {
