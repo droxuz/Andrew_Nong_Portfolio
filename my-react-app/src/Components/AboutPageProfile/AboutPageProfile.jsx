@@ -1,26 +1,24 @@
 import React from 'react';
 import './AboutPageProfile.css';
-
+import darksign from "../../Elements/Darksign_29.webp";
+import image from "../../Elements/logo.svg"
 const AboutPageProfile = () => {
-  const paragraphs = [
-    "No Unkindled can ever truly claim the embers that burn within a champion's bosom, which is precisely what makes their yearning for warmth so keen.",
-    "Gain the strength of flame and increased max HP until death.",
-    "With the strength of fire, the summoning signs of Unkindled become visible, and seekers of embers can be summoned to join in co-operation. But beware, the embers may also attract invaders."
+  const lines = [
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vel assumenda id blanditiis atque aliquid sit reprehenderit. Sequi laudantium sed, porro voluptatum rem et modi delectus esse nisi, eligendi facere?"
   ];
 
   return (
-    <div className="about-page-profile">
-      <div className="profile-header">
-        <h2 className="profile-title">Ember</h2>
+    <div className="aboutPageProfile">
+      <div className="profileHeader">
+        <img src={image} alt="darksign image" className='profileIcon' />
+        <h2 className="profileTitle">Andrew Nong</h2>
       </div>
 
-      <div className="profile-content">
-        {paragraphs.map((text, i) => (
-          <React.Fragment key={i}>
-            <p className="profile-paragraph">{text}</p>
-            {i < paragraphs.length - 1 && <hr className="profile-separator" />}
-          </React.Fragment>
-        ))}
+      <div className="profileContent">
+        
+        {lines.map((text, i) => (
+        <p className="profileParagraph" key={i}>{text}</p>
+      ))}
       </div>
     </div>
   );

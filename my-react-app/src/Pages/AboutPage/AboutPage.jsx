@@ -4,7 +4,7 @@ import "./AboutPage.css";
 
 function AboutPage(){
     return(
-        <div>
+        <div className="AboutPageDiv">
             <HeadNavigation />
             <AboutPageProfile/>
         </div>

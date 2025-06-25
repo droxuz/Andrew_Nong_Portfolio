@@ -31,7 +31,7 @@ function ProjectPage(){
   }, [])
 
   return (
-    <div className="pageLayout"
+    <div className="ProjectPageLayout"
       
     >
       <div>
