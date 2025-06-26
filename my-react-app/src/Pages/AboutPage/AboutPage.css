@@ -2,3 +2,8 @@
     background-color: black;
     min-height: 100vh;
 }
+
+.AboutPageDiv > *:not(.tsparticles-canvas-el) {
+  position: relative;
+  z-index: 1;
+}

@@ -1,9 +1,7 @@
-// HeadNavigation.js
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./HeadNavigation.css";
 
-// wrap the router Link so it accepts Framer props
 const MotionLink = motion(Link);
 
 function HeadNavigation() {
