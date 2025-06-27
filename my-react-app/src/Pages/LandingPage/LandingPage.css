@@ -15,51 +15,61 @@
     font-style: normal;
     font-display: swap;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgba(6,5,1,1);
+}
 
 .LandingContainer {
     display: flex;
-    flex-direction: row; /* Place WelcomeMSG and Navigation side by side */
-    height: 100vh;
+    flex-direction: wrap; 
+    min-height: 100vh;
     width: 100vw;
 }
-
+.WelcomeMSG,
+.NavigationBlock {
+  flex: 1 1 50%;           
+  min-width: 300px;        
+  box-sizing: border-box;
+}
 
 .WelcomeMSG {
     background: rgba(6,5,1,1);
-    /*background: linear-gradient(105deg, rgba(134,42,2,1) -10%, rgb(36, 13, 1) -5%, rgba(6,5,1,1) 70%);*/
-    flex: 1; 
     display: flex;
     flex-direction: column;
-    text-align: right;
     justify-content: center;
-    padding-right: 1vw;
-    gap: 0.3rem;
-    
+    text-align: right;
+    padding: clamp(1rem, 5vw, 4rem) clamp(1rem, 5vw, 6rem);
+    gap: clamp(0.5rem, 1vw, 1.5rem);
 }
 
 .Greeting{
     font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+    font-size: clamp(2rem,8vw,6rem);
 }
 
 .NavigationBlock {
-    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: -5px; 
-    background-color: rgb(6, 5, 1);
+    background-color: rgb(6,5,1);
+    padding: clamp(1rem, 4vw, 3rem);
 }
 
 .NavigationBlock ul{
     list-style: none;
-    background-color: rgb(6, 5, 1);
-    text-align: left;
     margin: 0;
-    padding: 15px;
-    margin-top: 15px;
-    border-left: solid;
-    border-color: rgba(134,42,5,1);
+    padding: 0;
+    border-left: 4px solid rgba(134,42,5,1);
+    padding-left: 1vw;
+    text-align: left;
 }
 
 .NavigationBlock a{
