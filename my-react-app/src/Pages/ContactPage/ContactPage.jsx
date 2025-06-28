@@ -1,11 +1,11 @@
 import HeadNavigation from '../../Components/HeadNavigation/HeadNavigation';
-import './ContactPage.css';
+import ContactPageInfo from '../../Components/ContactPageInfo/ContactPageInfo';
 
 function ContactPage(){
     return(
         <div>
-            <HeadNavigation />
-            <h1>This is the Contact Page</h1>
+            <HeadNavigation/>
+            <ContactPageInfo/>
         </div>
     );
 }

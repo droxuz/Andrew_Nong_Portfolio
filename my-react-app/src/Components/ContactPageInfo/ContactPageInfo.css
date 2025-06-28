@@ -1,0 +1,24 @@
+.contactPageContainer{
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: rgb(6, 5, 1);
+    border: 2px solid rgb(254, 199, 111);    
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #e0e0e0;
+    font-family: 'OptimusPrinceps',Georgia, 'Times New Roman', Times, serif; 
+}
+.contactPageTitle{
+    font-family: 'OptimusPrinceps',Georgia, 'Times New Roman', Times, serif; 
+    color: white;
+}
+.contactPageHeader{
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+}
+
+.contactPageGridContainer{
+    background-color: red;
+}
