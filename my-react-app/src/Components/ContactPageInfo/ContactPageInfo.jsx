@@ -5,6 +5,7 @@ import linkedinIcon from'../../Elements/linkedin-icon.svg';
 
 export default function ContactPageInfo(){
     return(
+        
         <div className="contactPageContainer">
             <div className="contactPageHeader">
                 <h2 className="contactPageTitle">Contact Me !</h2>
