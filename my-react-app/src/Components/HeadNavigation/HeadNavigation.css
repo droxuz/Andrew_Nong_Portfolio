@@ -18,9 +18,9 @@
 
 .naviBar {
   display: flex;
-  width: fit-content;    
+  max-width: 60vh;
   margin: 0 auto;
-  height: 70px;
+  height: 4.5rem;
   border: 2px solid white;
   background-color: rgba(6,5,1,1);
   border-radius: 10px;
@@ -31,11 +31,11 @@
 }
 
 .naviBar ul {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 20px;
+  display: flex;      
+  gap: 2rem;    
 }
 
 .naviBar a{
@@ -45,9 +45,7 @@
     position: relative;
     display: inline-block;
     font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 5px;
+    margin: 0 1rem 0.5rem;
 }
 
 .naviBar a::after {
