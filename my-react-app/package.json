@@ -1,5 +1,4 @@
 {
-  "homepage":"https://andrew_nong.github.io/my-portfolio",
   "name": "andrew_nong_portfolio",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@tsparticles/all": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
-    "gh-pages": "^6.3.0",
     "motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -22,9 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
