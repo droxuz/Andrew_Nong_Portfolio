@@ -19,7 +19,7 @@ export default function ContactPageInfo(){
                     </a>
                     </li>
                     <li>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andrewnong54@gmail.com&su=Portfolio%20Inquiry" aria-label='Email'>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andrewnong54@gmail.com&su=Portfolio%20Inquiry" target='_blank' rel='noopener' aria-label='Email'>
                             <img src={gmailFull} alt="gmailFullColorSVG" />
                             <span>Gmail</span>
                         </a>
