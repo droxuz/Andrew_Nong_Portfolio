@@ -9,7 +9,7 @@ import WaterWizardImage from '../../Elements/WaterWizard.jpg';
 export default function QuadrantCircle({
   sizeVh = 70,
   colors = ['rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)', 'rgb(6, 5, 1)'],
-  labels = ['WaterWizard', 'HideoutHelper', 'TiltTerrain', 'Ledgease'],
+  labels = ['WaterWizard', 'HideoutHelper', 'TiltTerrain', 'PlatePlan'],
   modalContents = [
     'Utilizing an Arduino Grove, water pump, MOSFET, moisture sensor, and some tubing. I have created a automated plant watering system that periodically probes the soil using the moisture sensor and dispenses water through the waterpump. Through Java and the accompanying Firmata and Princeton StdDraw, I am able to control the Arduino Grove board with the aforementioned components, and using Princeton\'s StdDraw I am able to display the moisture level on a continuous graph.',
 
@@ -17,7 +17,7 @@ export default function QuadrantCircle({
 
     'An academic project with a partner Mayank Neupane, We created a bluetooth controlled car with the help of a DE-10 Lite FGPA board, ESP32 development board, 2 electric motors, and a Motor Driver Controller board. Using Verilog we developed the code to manipulate 2 bits to control the motors, utilizing the DE-10\'s onboard 5 axis accelerometer we were able to control the SPI using clock cycles to gather information from the accelerometer and decode it into the 7 segment display on the DE-10 Lite.',
 
-    'A project that I am currently working is a personal financial app that utilizes React frontend, Django backend, while utilizing datascience and ML libraries such as numPy, pandas, and scikit-learn.'
+    'Working in a team of 4 others we created a standalone Java project that manages a restaurant complete with frontend and backend using Java and PostgreSQL. The features of the software include table management, reservations, menu settings, recording of data for data analysis, and a user login system. The frontend is done through Java graphics, and the backend was also only Java, we decided to use a SQL database because it was easy to organize small sets of data into tables that are easily maintained and managed.'
   ],
   projectLinks = [
     {href:"https://github.com/droxuz/PlantWateringSystem", label:"WaterWizard"},
