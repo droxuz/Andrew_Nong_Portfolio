@@ -1,0 +1,11 @@
+.ContactPageDiv{
+    position: relative;
+    background-color: black;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.ContactPageDiv > *:not(.tsparticles-canvas-el) {
+  position: relative;
+  z-index: 1;
+}

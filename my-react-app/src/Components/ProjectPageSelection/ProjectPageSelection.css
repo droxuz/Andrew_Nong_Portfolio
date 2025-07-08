@@ -150,7 +150,7 @@
 }
 
 .modalParagraph{
-  font-family: 'BenderRegular', 'Times New Roman', Times, serif;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
   font-size: 105%;
 
 }
@@ -175,11 +175,11 @@
   width: 30vh;
 }
 .PlatePlanStyle{
-  height: 40vh;
-  width: 30vh;
+  height: 30vh;
+  width: 55vh;
 }
 .modalButton{
-  font-family: 'OptimusPrinceps', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   border-radius: 5%;
   border-bottom: solid, 1px, rgb(208, 100, 64);
