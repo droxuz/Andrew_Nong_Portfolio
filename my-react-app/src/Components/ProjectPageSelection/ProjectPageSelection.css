@@ -174,7 +174,10 @@
   height: 40vh;
   width: 30vh;
 }
-
+.PlatePlanStyle{
+  height: 40vh;
+  width: 30vh;
+}
 .modalButton{
   font-family: 'OptimusPrinceps', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;

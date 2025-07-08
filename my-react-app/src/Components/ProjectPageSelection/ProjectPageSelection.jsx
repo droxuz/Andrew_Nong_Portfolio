@@ -5,6 +5,7 @@ import './ProjectPageSelection.css';
 import HideoutHelperImage from '../../Elements/HideoutHelperImage.png';
 import TiltTerrainImage from '../../Elements/TiltTerrain.jpg';
 import WaterWizardImage from '../../Elements/WaterWizard.jpg';
+import PlatePlanImage from '../../Elements/PlatePlan.png';
 
 export default function QuadrantCircle({
   sizeVh = 70,
@@ -27,10 +28,10 @@ export default function QuadrantCircle({
   ],
 
   projectPhotos = [
-    {src:WaterWizardImage , alt:"WaterWizardImage", className:"WaterWizardImageStyle"},
+    {src:WaterWizardImage,alt:"WaterWizardImage", className:"WaterWizardImageStyle"},
     {src:HideoutHelperImage,alt:"HideoutHelperImage", className:"HideoutHelperImageStyle"},
     {src:TiltTerrainImage,alt:"TiltTerrainImage", className:"TiltTerrainImageStyle"},
-    {src:"",alt:""}
+    {src:PlatePlanImage,alt:"PlatePlanImage", className:"PlatePlanStyle"}
     ],
   gapVh = 2,
   
