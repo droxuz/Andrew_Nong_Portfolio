@@ -1,8 +1,8 @@
-#Portfolio
+# Portfolio
 
 Hey, I am Andrew and this is my personal portfolio. It represents some of what I have done in the past and some future projects I wish to undertake also some personal information about me. This is the production [link](https://andrew-nong-portfolio.vercel.app/about) please visit also feel to critic it so that I can fix it. 😄
 
-##Resources
+## Resources
 
 > [!NOTE]
 > All resources, libraries I used in this project
