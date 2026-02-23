@@ -37,152 +37,258 @@
     src: url('../../Fonts/Jovanny\ Lemonad\ -\ Bender-Bold.woff') format('woff');
     }
   
-.circleWrap{
-  background-image: url('../../Elements/Darksign_29.webp');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 700px;
-  position: relative;
-  width: var(--size);
-  height: var(--size);
+/* ProjectPageSelection.css */
+
+.projectsSection {
+  width: min(1100px, calc(100% - 48px));
   margin: 5vh auto 0;
-  background-color: black;
-  border-radius: 100%;
+  padding-bottom: 6vh;
+  color: white;
 }
-.quadrantContainer {
-  width: var(--size);
-  height: var(--size);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "q0 q1"
-    "q2 q3";
-  gap: var(--gap);
-  transform-origin: center center;
-}
-  
-  
-.quadrantPanel {
+.projectsHeader,
+.projectsTitle,
+.projectsSubtitle {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   position: relative;
+  z-index: 10;
+}
+
+.projectsHeader {
+  color: white;
+  margin-bottom: 18px;
+}
+
+.projectsTitle {  
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.0em;
+  margin: 0;
+  color: white ;
+  font-family:'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.projectsSubtitle {
+  margin: 8px 0 0;
+  opacity: 0.8;
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.projectCard {
+  grid-column: span 6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+@media (max-width: 920px) {
+  .projectCard {
+    grid-column: span 12;
+  }
+}
+
+.projectImageWrap {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.projectImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+.projectBody {
+  padding: 16px 16px 14px;
+}
+
+.projectTopRow {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid rgb(153, 166, 174);
-  
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
 }
-  
-  
-.panelTOP { 
-  grid-area: q0; 
-  border-top-left-radius: var(--size);
-  /*border-bottom-right-radius: 5%;*/
-  
+
+.projectName {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
 }
-.panelRIGHT { 
-  grid-area: q1; 
-  border-top-right-radius: var(--size); 
-  /*border-bottom-left-radius: 5%;*/
+
+.projectMeta {
+  font-size: 12px;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55%;
 }
-.panelLEFT { 
-  grid-area: q2; 
-  border-bottom-left-radius: var(--size); 
-  /*border-top-right-radius: 5%;*/
+
+.projectDesc {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.55;
 }
-.panelBOTTOM { 
-  grid-area: q3; 
-  border-bottom-right-radius: var(--size); 
-  /*border-top-left-radius: 5%;*/
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
-  
-  
-  
-.panelContent {
-  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  pointer-events: none;
-  transform: rotate(-45deg);
+
+.projectTag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(208, 100, 64, 0.35);
+  background: rgba(208, 100, 64, 0.08);
 }
-  
-  
-.panelImg {
-  display: block;
-  margin: 0.5rem auto 0;
-  max-width: 80%;
-  height: auto;
+
+.projectCtaRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
 }
-  
-  
-.overlay {
+
+.projectCta {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.projectOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.projectModal {
+  width: min(980px, 100%);
+  border-radius: 18px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(12, 12, 12, 0.92);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.projectModalTop {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-  
-  
-.modal {
-  background: rgb(225, 224, 222);
-  padding: 24px;
-  border-radius: 16px;
-  min-width: 150px;
-  max-width: 40vw;
-  cursor: auto;
+
+.projectModalTitle {
+  color: white;
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.projectModalTags {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.modalHeader{
-  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
+.projectModalClose {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.modalParagraph{
-  font-family:  Georgia, 'Times New Roman', Times, serif;
-  font-size: 105%;
-
+.projectModalClose:hover {
+  box-shadow: 0 0 10px rgba(208, 100, 64, 0.35);
 }
 
-.modalLink{
-  font-family: 'BenderBold', 'Times New Roman', Times, serif; 
-}
-.modalImage{
-  object-fit: center;
+.projectModalGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  padding: 18px;
 }
 
-.WaterWizardImageStyle{
-  height: 40vh;
-  width: 30vh;
+@media (max-width: 900px) {
+  .projectModalGrid {
+    grid-template-columns: 1fr;
+  }
 }
-.HideoutHelperImageStyle{
-  height: 30vh;
-  width: 60vh;
+
+.projectModalDesc {
+  margin: 0 0 12px;
+  color: white;
+  line-height: 1.6;
+  opacity: 0.9;
 }
-.TiltTerrainImageStyle{
-  height: 40vh;
-  width: 30vh;
+
+.projectModalLink {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(208, 100, 64, 0.35);
+  background: rgba(208, 100, 64, 0.1);
+  color: inherit;
+  text-decoration: none;
 }
-.PlatePlanStyle{
-  height: 30vh;
-  width: 55vh;
+
+.projectModalMuted {
+  display: inline-block;
+  margin-top: 8px;
+  opacity: 0.7;
 }
-.modalButton{
-  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
-  border-radius: 5%;
-  border-bottom: solid, 1px, rgb(208, 100, 64);
-  padding: 1%;
+
+.projectModalMeta {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.75;
 }
-  
+
+.projectModalImage {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

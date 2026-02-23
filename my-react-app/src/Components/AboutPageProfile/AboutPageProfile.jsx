@@ -1,23 +1,159 @@
-import React from 'react';
-import './AboutPageProfile.css';
-import image from "../../Elements/logo.svg";
+import React, { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import "./AboutPageProfile.css";
+
 import sign from "../../Elements/goldSignature.png";
+import photo1 from "../../Elements/Darksign_29.webp";
+
 const AboutPageProfile = () => {
-  const lines = [
-    "Hey, I am Andrew and this is my portfolio that includes some projects that I have worked on previously and currently, I am currently a third year software engineering student at York University and currently looking for an opportunity to showcase my abilities. \n\n I have worked on projects involving hardware and embedded systems such as Arduino, FGPA, while using Verilog, MATLAB, and Java to program functionality. As for the fully software based projects, I have worked on projects including Java, Python, Firebase, React.js, Node.js, PostgreSQL. \n\n Outside of academia and projects I really enjoying lifting, gaming, and music. Some of my favorite games include Dark Souls 3, Elden Ring, Sekiro, and Escape from Tarkov. I am also a motorsport fan and watch F1 races when I can."
-  ];
+  const bio = useMemo(
+    () => ({
+      name: "Andrew Nong",
+      headline: "Software Engineering • Full-Stack • Embedded",
+      about: [
+        "I’m Andrew, a third-year Software Engineering student at York University. I’m looking for an opportunity to apply my skills and ship real products with a strong team.",
+        "I build across hardware and software: Arduino + FPGA work (Verilog, MATLAB, Java), and full-stack apps using React, Node.js, Firebase, Python, and PostgreSQL.",
+        "Outside of engineering, I’m into lifting, gaming (Dark Souls 3, Elden Ring, Sekiro, Escape from Tarkov), and motorsport (F1).",
+      ],
+      highlights: [
+        "Full-stack: React, Node.js, Firebase, PostgreSQL",
+        "Embedded: Arduino, FPGA (DE10-Lite), Verilog, SPI",
+        "Languages: Java, Python, JavaScript",
+      ],
+    }),
+    []
+  );
+
+  const photos = useMemo(
+    () => [
+      //{ src: Photo1, alt: "Photo 1" },
+      //{ src: Photo2, alt: "Photo 2" },
+      //{ src: Photo3, alt: "Photo 3" },
+      // { src: Photo4, alt: "Photo 4" },
+      // { src: Photo5, alt: "Photo 5" },
+      { src: photo1, alt: "Darksign" },
+    ],
+    []
+  );
+
+  const [activeIndex, setActiveIndex] = useState(null);
+  const active = activeIndex != null ? photos[activeIndex] : null;
 
   return (
-    <div className="aboutPageProfile">
-      <div className="profileHeader">
-        <img src={sign} alt="image" className='profileIcon' />
-        <h2 className="profileTitle">Andrew Nong - Software Engineering | Full-Stack</h2>
-      </div>
+    <section className="aboutModern">
+      {/* Top Card */}
+      <motion.div
+        className="aboutCard"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "tween", duration: 0.35 }}
+      >
+        <div className="aboutHeader">
+          <div className="aboutIdentity">
+            <img src={sign} alt="Signature" className="aboutSignature" />
+            <div>
+              <h2 className="aboutTitle">{bio.name}</h2>
+              <p className="aboutSubtitle">{bio.headline}</p>
+            </div>
+          </div>
 
-      <div className="profileContent">
-        <p className="profileParagraph">{lines}</p>
-      </div>
-    </div>
+          <div className="aboutPills">
+            {bio.highlights.map((h) => (
+              <span key={h} className="aboutPill">
+                {h}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="aboutBody">
+          {bio.about.map((p, i) => (
+            <p key={i} className="aboutParagraph">
+              {p}
+            </p>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Gallery */}
+      <motion.div
+        className="aboutCard"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "tween", duration: 0.35, delay: 0.05 }}
+      >
+        <div className="aboutGalleryHeader">
+          <h3 className="aboutSectionTitle">Gallery</h3>
+          <p className="aboutSectionSub">A few snapshots from projects + life.</p>
+        </div>
+
+        <div className="aboutGalleryGrid">
+          {photos.map((ph, i) => (
+            <motion.button
+              key={ph.alt}
+              className="aboutThumb"
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <img className="aboutThumbImg" src={ph.src} alt={ph.alt} loading="lazy" />
+              <span className="aboutThumbOverlay" />
+            </motion.button>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            className="aboutLightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveIndex(null)}
+          >
+            <motion.div
+              className="aboutLightboxInner"
+              initial={{ opacity: 0, y: 14, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 14, scale: 0.98 }}
+              transition={{ type: "tween", duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img className="aboutLightboxImg" src={active.src} alt={active.alt} />
+
+              <div className="aboutLightboxControls">
+                <button
+                  className="aboutBtn"
+                  type="button"
+                  onClick={() =>
+                    setActiveIndex((idx) => (idx == null ? 0 : (idx - 1 + photos.length) % photos.length))
+                  }
+                >
+                  Prev
+                </button>
+
+                <button className="aboutBtn" type="button" onClick={() => setActiveIndex(null)}>
+                  Close
+                </button>
+
+                <button
+                  className="aboutBtn"
+                  type="button"
+                  onClick={() =>
+                    setActiveIndex((idx) => (idx == null ? 0 : (idx + 1) % photos.length))
+                  }
+                >
+                  Next
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
