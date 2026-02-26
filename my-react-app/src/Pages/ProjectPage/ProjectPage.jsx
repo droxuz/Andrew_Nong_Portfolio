@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import HeadNavigation from "../../Components/HeadNavigation/HeadNavigation"
 import ProjectPageSelection from "../../Components/ProjectPageSelection/ProjectPageSelection"
 import ProjectPageParticles from '../../Components/ProjectPageParticles/ProjectPageParticles';

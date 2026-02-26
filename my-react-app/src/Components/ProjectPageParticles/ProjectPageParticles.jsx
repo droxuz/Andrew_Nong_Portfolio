@@ -27,7 +27,7 @@ const ProjectPageParticles = (props) => {
           value: "rgba(0,0,0,0.5)",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60,
       interactivity: {
         events: {
           onClick: {
@@ -72,7 +72,7 @@ const ProjectPageParticles = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 7,
+          speed: 2,
           straight: false,
         },
         number: {

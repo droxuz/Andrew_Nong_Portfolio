@@ -1,63 +1,67 @@
-import './LandingPage.css'
-import {motion} from 'framer-motion'
-import { Link } from 'react-router-dom';
-function LandingPage(){
-    return(
-        <div className="LandingContainer">
-            
-            <div className="WelcomeMSG">
-                <h1 className='Greeting'>Welcome</h1>
-                <p></p>
-            </div>
-            
-            <div className="NavigationBlock">
-                <ul className="NavigationList">
+import "./LandingPage.css";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-                    <li>
-                        <Link to={"/about"}>
-                        <motion.a
-                        whileHover={{
-                            scale: 1.2,
-                            transition: {duration: 0.75},
-                            textShadow: "0px 0px 8px rgb(208, 100, 64)",}}
-                        href="">
-                        ABOUT
-                        </motion.a>
-                        </Link>
-                    </li>
+const MotionLink = motion(Link);
 
-                    <li>
-                        <Link to={"/project"}>
-                        <motion.a 
-                        whileHover={{
-                            scale: 1.2,
-                            transition: {duration: 0.75},
-                            textShadow: "0px 0px 8px rgb(208, 100, 64)",}} 
-                        href="">
-                        PROJECTS
-                        </motion.a>
-                        </Link>
-                    </li>
+function LandingPage() {
+  return (
+    <div className="LandingContainer">
+      <div className="HeroSection">
+        <motion.h1
+          className="Greeting"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Welcome
+        </motion.h1>
 
-                    <li>
-                        <Link to={"/contact"}>
-                        <motion.a 
-                        whileHover={{
-                            scale: 1.2,
-                            transition: {duration: 0.75},
-                            textShadow: "0px 0px 8px rgb(208, 100, 64)",}} 
-                        href="">
-                        CONTACT
-                        </motion.a>
-                        </Link>
-                    </li>
+        <motion.h2
+          className="SubTitle"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Andrew's Portfolio
+        </motion.h2>
+      </div>
 
-                    
-                </ul>
-            </div>
-        </div>
-        
-        
-    );
+      <nav className="NavigationBlock">
+        <ul className="NavigationList">
+          <li>
+            <MotionLink
+              to="/about"
+              className="NavItem"
+              whileHover={{ scale: 1.08 }}
+            >
+              ABOUT
+            </MotionLink>
+          </li>
+
+          <li>
+            <MotionLink
+              to="/project"
+              className="NavItem"
+              whileHover={{ scale: 1.08 }}
+            >
+              PROJECTS
+            </MotionLink>
+          </li>
+
+          <li>
+            <MotionLink
+              to="/contact"
+              className="NavItem"
+              whileHover={{ scale: 1.08 }}
+            >
+              CONTACT
+            </MotionLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
+
 export default LandingPage;

@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
 import "./ProjectPageSelection.css";
 import HideoutHelperImage from "../../Elements/HideoutHelperImage.png";
 import TiltTerrainImage from "../../Elements/TiltTerrain.jpg";
@@ -53,10 +52,18 @@ export default function ProjectCards({
 }) {
   const [active, setActive] = useState(null);
 
-  const activeProject = useMemo(() => {
-    if (active == null) return null;
-    return projects[active] ?? null;
-  }, [active, projects]);
+  const activeProject = useMemo(() => {if (active == null) return null; return projects[active] ?? null;}, [active, projects]);
+  //Whenever active or projects changes recalculate activeProject. If active is null, return null. Otherwise return projects[active] if it exists, else return null.
+
+  const preloadProject = async (idx) => {
+  const src = projects[idx]?.image?.src;
+    if (!src) return;
+    const img = new Image();
+    img.src = src;
+      if (img.decode) {
+        try { await img.decode(); } catch {}
+      } 
+  };
 
   return (
     <section className="projectsSection">
@@ -72,11 +79,13 @@ export default function ProjectCards({
           <motion.article
             key={p.title}
             className="projectCard"
-            initial={{ opacity: 0, y: 10 }}
+            initial={ false }
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "tween", duration: 0.35, delay: idx * 0.05 }}
+            transition={{ type: "tween", duration: 0.15, delay: idx * 0.05 }}
             whileHover={{ y: -4 }}
-            onClick={() => setActive(idx)}
+            onHoverStart={() => preloadProject(idx)}
+            onFocus={() => preloadProject(idx)}
+            onClick={() => { setActive(idx);}}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
@@ -116,17 +125,15 @@ export default function ProjectCards({
         {activeProject && (
           <motion.div
             className="projectOverlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActive(null)}
+            onClick={() => setActive(null) }
+            
           >
             <motion.div
               className="projectModal"
-              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              initial={{ opacity: 0.25, y: 16, scale: 1 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.98 }}
-              transition={{ type: "tween", duration: 0.25 }}
+              transition={{ type: "tween", duration: 0.15 }}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
