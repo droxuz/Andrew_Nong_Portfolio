@@ -26,11 +26,7 @@ const AboutPageProfile = () => {
 
   const photos = useMemo(
     () => [
-      //{ src: Photo1, alt: "Photo 1" },
-      //{ src: Photo2, alt: "Photo 2" },
-      //{ src: Photo3, alt: "Photo 3" },
-      // { src: Photo4, alt: "Photo 4" },
-      // { src: Photo5, alt: "Photo 5" },
+      
       { src: photo1, alt: "Darksign" },
     ],
     []
@@ -41,7 +37,6 @@ const AboutPageProfile = () => {
 
   return (
     <section className="aboutModern">
-      {/* Top Card */}
       <motion.div
         className="aboutCard"
         initial={{ opacity: 0, y: 10 }}
