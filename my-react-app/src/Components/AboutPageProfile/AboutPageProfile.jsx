@@ -4,6 +4,10 @@ import "./AboutPageProfile.css";
 
 import sign from "../../Elements/goldSignature.png";
 import photo1 from "../../Elements/Darksign_29.webp";
+import snowboard from "../../Elements/mslm_snowboarding.jpeg";
+import porsche from "../../Elements/porsche_rennsport.jpeg";
+import rc_car from "../../Elements/rc_car.jpeg";
+import gym_photo from "../../Elements/gym_photo.jpeg";
 
 const AboutPageProfile = () => {
   const bio = useMemo(
@@ -11,14 +15,14 @@ const AboutPageProfile = () => {
       name: "Andrew Nong",
       headline: "Software Engineering • Full-Stack • Embedded",
       about: [
-        "I’m Andrew, a third-year Software Engineering student at York University. I’m looking for an opportunity to apply my skills and ship real products with a strong team.",
+        "I’m Andrew, a fourth year Software Engineering student at York University. I’m looking for an opportunity to apply my skills and ship real impact with a strong team.",
         "I build across hardware and software: Arduino + FPGA work (Verilog, MATLAB, Java), and full-stack apps using React, Node.js, Firebase, Python, and PostgreSQL.",
-        "Outside of engineering, I’m into lifting, gaming (Dark Souls 3, Elden Ring, Sekiro, Escape from Tarkov), and motorsport (F1).",
+        "Outside of engineering, I’m into fitness, gaming(Deadlock, Dark Souls, EFT), music, snowboarding, anime, and motorsports(F1, GT3).",
       ],
       highlights: [
         "Full-stack: React, Node.js, Firebase, PostgreSQL",
-        "Embedded: Arduino, FPGA (DE10-Lite), Verilog, SPI",
-        "Languages: Java, Python, JavaScript",
+        "Embedded: Arduino, FPGA (DE10-Lite), Verilog",
+        "Languages: Java, Python, JavaScript, MATLAB",
       ],
     }),
     []
@@ -27,7 +31,10 @@ const AboutPageProfile = () => {
   const photos = useMemo(
     () => [
       
-      { src: photo1, alt: "Darksign" },
+      { src: gym_photo, alt: "Gym Photo" },
+      { src: snowboard, alt: "Snowboarding" },
+      { src: porsche, alt: "Porsche Rennsport Photo" },
+      { src: rc_car, alt: "RC Car" },
     ],
     []
   );
@@ -70,7 +77,6 @@ const AboutPageProfile = () => {
         </div>
       </motion.div>
 
-      {/* Gallery */}
       <motion.div
         className="aboutCard"
         initial={{ opacity: 0, y: 10 }}

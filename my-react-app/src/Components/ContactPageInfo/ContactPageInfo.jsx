@@ -22,8 +22,8 @@ export default function ContactPageInfo() {
     },
     {
       label: "LinkedIn",
-      sub: "in/andrew-nong-4a6979305",
-      href: "https://www.linkedin.com/in/andrew-nong-4a6979305/",
+      sub: "in/andrew-nong-yorku",
+      href: "https://www.linkedin.com/in/andrew-nong-yorku",
       icon: linkedinIcon,
       aria: "LinkedIn profile",
     },
