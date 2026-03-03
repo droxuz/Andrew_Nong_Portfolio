@@ -9,7 +9,7 @@ import PlatePlanImage from "../../Elements/PlatePlan.png";
 export default function ProjectCards({
   projects = [
     {
-      title: "WaterWizard",
+      title: "Automatic Plant Watering System",
       description:
         "Automated plant watering system using Arduino Grove, moisture sensing, and pump control. Java (Firmata) drives hardware while a live StdDraw graph visualizes moisture over time.",
       href: "https://github.com/droxuz/PlantWateringSystem",
@@ -22,11 +22,11 @@ export default function ProjectCards({
       title: "HideoutHelper",
       description:
         "Web app for Escape From Tarkov players to track hideout upgrades. Built with HTML/CSS/JavaScript and Firebase (Firestore + hosting) to learn full-stack fundamentals and NoSQL design.",
-      href: "https://hideouthelper-7c1a6.web.app/",
-      linkLabel: "Live Demo",
+      href: "https://github.com/droxuz/HideoutHelper",
+      linkLabel: "GitHub Repo",
       image: { src: HideoutHelperImage, alt: "HideoutHelper project preview" },
       keywords: ["Firebase", "NoSQL", "Web App"],
-      meta: "JavaScript • Firestore • Hosting • UI/UX",
+      meta: "JavaScript • Firestore • Full-Stack • UI/UX",
     },
     {
       title: "TiltTerrain",
