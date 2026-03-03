@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./ProjectPageSelection.css";
 import HideoutHelperImage from "../../Elements/HideoutHelperImage.png";
-import TiltTerrainImage from "../../Elements/TiltTerrain.jpg";
+import TiltTerrainImage from "../../Elements/rc_car.jpeg";
 import WaterWizardImage from "../../Elements/WaterWizard.jpg";
 import PlatePlanImage from "../../Elements/PlatePlan.png";
 
@@ -29,19 +29,19 @@ export default function ProjectCards({
       meta: "JavaScript • Firestore • Full-Stack • UI/UX",
     },
     {
-      title: "TiltTerrain",
+      title: "FPGA Bluetooth Controlled Car",
       description:
-        "Bluetooth-controlled car using a DE10-Lite FPGA and ESP32. Verilog motor control, SPI accelerometer readout, and decoding into seven-segment display output.",
+        "Designed and implemented in Verilog on a DE10-Lite board, integrating SPI-based sensor acquisition and PWM motor control for real-time speed and direction adjustment. Ultrasonic sensing enabled obstacle detection, while ESP32 wireless communication provided remote control capability. Demonstrates real time embedded systems design and hardware and software integration.",
       href: "",
       linkLabel: "",
-      image: { src: TiltTerrainImage, alt: "TiltTerrain project preview" },
+      image: { src: TiltTerrainImage, alt: "FPGA Bluetooth-Controlled Car project preview" },
       keywords: ["FPGA", "Verilog", "Embedded"],
-      meta: "DE10-Lite • ESP32 • SPI • Motor driver",
+      meta: "DE10-Lite • ESP32 • SPI • Motor Control • Ultrasonic Sensor",
     },
     {
       title: "PlatePlan",
       description:
-        "Standalone Java + PostgreSQL restaurant management system with reservations, table management, menus, analytics-ready data, and login. Built with a team; Java graphics for UI.",
+        "Standalone Java + PostgreSQL restaurant management system with reservations, table management, menus, analytics-ready data, and authentication. Built with a team; Java Swing for GUI.",
       href: "https://github.com/droxuz/Plate_Plan",
       linkLabel: "GitHub Repo",
       image: { src: PlatePlanImage, alt: "PlatePlan project preview" },

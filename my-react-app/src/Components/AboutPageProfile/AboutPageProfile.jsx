@@ -3,11 +3,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./AboutPageProfile.css";
 
 import sign from "../../Elements/goldSignature.png";
-import photo1 from "../../Elements/Darksign_29.webp";
 import snowboard from "../../Elements/mslm_snowboarding.jpeg";
 import porsche from "../../Elements/porsche_rennsport.jpeg";
-import rc_car from "../../Elements/rc_car.jpeg";
 import gym_photo from "../../Elements/gym_photo.jpeg";
+import good_eats from "../../Elements/good_eats.jpg";
+import chairlift from "../../Elements/chairlift.jpg";
 
 const AboutPageProfile = () => {
   const bio = useMemo(
@@ -34,7 +34,9 @@ const AboutPageProfile = () => {
       { src: gym_photo, alt: "Gym Photo" },
       { src: snowboard, alt: "Snowboarding" },
       { src: porsche, alt: "Porsche Rennsport Photo" },
-      { src: rc_car, alt: "RC Car" },
+      { src: good_eats, alt: "Food Photo" },
+      { src: chairlift, alt: "Chairlift Photo" },
+
     ],
     []
   );
@@ -98,14 +100,13 @@ const AboutPageProfile = () => {
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
             >
-              <img className="aboutThumbImg" src={ph.src} alt={ph.alt} loading="lazy" />
+              <img className="aboutThumbImg" src={ph.src} alt={ph.alt} loading="lazy" draggable={false} onDragStart={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}/>
               <span className="aboutThumbOverlay" />
             </motion.button>
           ))}
         </div>
       </motion.div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {active && (
           <motion.div
@@ -123,7 +124,7 @@ const AboutPageProfile = () => {
               transition={{ type: "tween", duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img className="aboutLightboxImg" src={active.src} alt={active.alt} />
+              <img className="aboutLightboxImg" src={active.src} alt={active.alt} draggable={false} onDragStart={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}/>
 
               <div className="aboutLightboxControls">
                 <button

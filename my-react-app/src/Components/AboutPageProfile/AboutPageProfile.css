@@ -178,12 +178,11 @@
   opacity: 1;
 }
 
-/* Lightbox */
 .aboutLightbox {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.98);
   display: grid;
   place-items: center;
   padding: 1.25rem;
@@ -274,4 +273,12 @@
   .aboutParagraph {
     font-size: 0.98rem;
   }
+}
+
+.aboutThumbImg,
+.aboutLightboxImg {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
