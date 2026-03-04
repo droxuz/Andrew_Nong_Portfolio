@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Andrew_Nong_Portfolio/static/css/main.8a0676b2.css",
-    "main.js": "/Andrew_Nong_Portfolio/static/js/main.ddc6fe52.js",
+    "main.js": "/Andrew_Nong_Portfolio/static/js/main.e43592bc.js",
     "static/js/453.63156b49.chunk.js": "/Andrew_Nong_Portfolio/static/js/453.63156b49.chunk.js",
     "static/media/porsche_rennsport.jpeg": "/Andrew_Nong_Portfolio/static/media/porsche_rennsport.66e1d49223543b2f2d3d.jpeg",
     "static/media/rc_car.jpeg": "/Andrew_Nong_Portfolio/static/media/rc_car.a0c260705fd8c9eff749.jpeg",
@@ -25,11 +25,11 @@
     "static/media/github-mark-white.svg": "/Andrew_Nong_Portfolio/static/media/github-mark-white.97ed8e7eef60d61ca469881dd6f34511.svg",
     "index.html": "/Andrew_Nong_Portfolio/index.html",
     "main.8a0676b2.css.map": "/Andrew_Nong_Portfolio/static/css/main.8a0676b2.css.map",
-    "main.ddc6fe52.js.map": "/Andrew_Nong_Portfolio/static/js/main.ddc6fe52.js.map",
+    "main.e43592bc.js.map": "/Andrew_Nong_Portfolio/static/js/main.e43592bc.js.map",
     "453.63156b49.chunk.js.map": "/Andrew_Nong_Portfolio/static/js/453.63156b49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8a0676b2.css",
-    "static/js/main.ddc6fe52.js"
+    "static/js/main.e43592bc.js"
   ]
 }
