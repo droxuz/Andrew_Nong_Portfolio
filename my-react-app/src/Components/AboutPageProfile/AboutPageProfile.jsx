@@ -20,8 +20,8 @@ const AboutPageProfile = () => {
         "Outside of engineering, I’m into fitness, gaming(Deadlock, Dark Souls, EFT), music, snowboarding, anime, and motorsports(F1, GT3).",
       ],
       highlights: [
-        "Full-stack: React, Node.js, Firebase, PostgreSQL",
-        "Embedded: Arduino, FPGA (DE10-Lite), Verilog",
+        "Full-stack: React, Node.js, Firebase, PostgreSQL, Docker",
+        "Embedded: Arduino, FPGA(DE10-Lite), Verilog, SystemVerilog",
         "Languages: Java, Python, JavaScript, MATLAB",
       ],
     }),

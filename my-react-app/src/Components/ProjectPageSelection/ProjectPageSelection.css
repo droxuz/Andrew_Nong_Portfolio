@@ -188,7 +188,7 @@
 .projectOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.85);
   display: grid;
   place-items: center;
   padding: 18px;

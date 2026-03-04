@@ -31,11 +31,11 @@ export default function ProjectCards({
     {
       title: "FPGA Bluetooth Controlled Car",
       description:
-        "Designed and implemented in Verilog on a DE10-Lite board, integrating SPI-based sensor acquisition and PWM motor control for real-time speed and direction adjustment. Ultrasonic sensing enabled obstacle detection, while ESP32 wireless communication provided remote control capability. Demonstrates real time embedded systems design and hardware and software integration.",
-      href: "",
-      linkLabel: "",
+        "Designed and implemented in SystemVerilog on a DE10-Lite board, integrating SPI-based sensor acquisition and PWM motor control for real-time speed and direction adjustment. Ultrasonic sensing enabled obstacle detection, while ESP32 wireless communication provided remote control capability. Demonstrates real time embedded systems design and hardware and software integration.",
+      href: "https://github.com/droxuz/fpga-rc-car",
+      linkLabel: "ZIP File",
       image: { src: TiltTerrainImage, alt: "FPGA Bluetooth-Controlled Car project preview" },
-      keywords: ["FPGA", "Verilog", "Embedded"],
+      keywords: ["FPGA", "SystemVerilog", "Embedded"],
       meta: "DE10-Lite • ESP32 • SPI • Motor Control • Ultrasonic Sensor",
     },
     {
