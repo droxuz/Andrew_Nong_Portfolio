@@ -47,7 +47,7 @@ export default function ContactPageInfo() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: "easeOut", delay: 0.08 }}
         >
-          Reach out for internships, collaborations, or questions about my projects.
+          Feel free to reach out using any of the platforms below.
         </motion.p>
       </header>
 
@@ -85,7 +85,7 @@ export default function ContactPageInfo() {
 
       <footer className="contactFooter">
         <p className="contactFooterText">
-          Prefer a quick message? Email is best. I usually reply within 24–48 hours.
+           
         </p>
       </footer>
     </section>
