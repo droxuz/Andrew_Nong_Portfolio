@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Andrew_Nong_Portfolio/static/css/main.8a0676b2.css",
-    "main.js": "/Andrew_Nong_Portfolio/static/js/main.e43592bc.js",
+    "main.js": "/Andrew_Nong_Portfolio/static/js/main.6580f78c.js",
     "static/js/453.63156b49.chunk.js": "/Andrew_Nong_Portfolio/static/js/453.63156b49.chunk.js",
     "static/media/porsche_rennsport.jpeg": "/Andrew_Nong_Portfolio/static/media/porsche_rennsport.66e1d49223543b2f2d3d.jpeg",
     "static/media/rc_car.jpeg": "/Andrew_Nong_Portfolio/static/media/rc_car.a0c260705fd8c9eff749.jpeg",
@@ -20,16 +20,16 @@
     "static/media/subset-OptimusPrinceps.woff": "/Andrew_Nong_Portfolio/static/media/subset-OptimusPrinceps.c6f5e029d64d6ec4783e.woff",
     "static/media/subset-OptimusPrincepsSemiBold.woff2": "/Andrew_Nong_Portfolio/static/media/subset-OptimusPrincepsSemiBold.08f151240a4d3fb8369a.woff2",
     "static/media/subset-OptimusPrinceps.woff2": "/Andrew_Nong_Portfolio/static/media/subset-OptimusPrinceps.5f979cae721eac6dc8a2.woff2",
-    "static/media/google_gmail_icon.svg": "/Andrew_Nong_Portfolio/static/media/google_gmail_icon.924e08c614c6d1ce1dd41da4f72bf91d.svg",
+    "static/media/google_gmail_icon.svg": "/Andrew_Nong_Portfolio/static/media/google_gmail_icon.5b4be06c48bf2cf72e9ee9f989147cd3.svg",
     "static/media/linkedin-icon.svg": "/Andrew_Nong_Portfolio/static/media/linkedin-icon.c5f7c80a4f858f8356d49cb775eb88ae.svg",
     "static/media/github-mark-white.svg": "/Andrew_Nong_Portfolio/static/media/github-mark-white.97ed8e7eef60d61ca469881dd6f34511.svg",
     "index.html": "/Andrew_Nong_Portfolio/index.html",
     "main.8a0676b2.css.map": "/Andrew_Nong_Portfolio/static/css/main.8a0676b2.css.map",
-    "main.e43592bc.js.map": "/Andrew_Nong_Portfolio/static/js/main.e43592bc.js.map",
+    "main.6580f78c.js.map": "/Andrew_Nong_Portfolio/static/js/main.6580f78c.js.map",
     "453.63156b49.chunk.js.map": "/Andrew_Nong_Portfolio/static/js/453.63156b49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8a0676b2.css",
-    "static/js/main.e43592bc.js"
+    "static/js/main.6580f78c.js"
   ]
 }
