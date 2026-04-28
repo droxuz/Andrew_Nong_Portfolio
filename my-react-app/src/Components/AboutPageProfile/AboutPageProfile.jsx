@@ -22,7 +22,7 @@ const AboutPageProfile = () => {
       highlights: [
         "Full-stack: React, Node.js, Firebase, PostgreSQL, Docker",
         "Embedded: Arduino, FPGA(DE10-Lite), Verilog, SystemVerilog",
-        "Languages: Java, Python, JavaScript, MATLAB",
+        "Languages: Java, Python, JavaScript, C, SQL",
       ],
     }),
     []
