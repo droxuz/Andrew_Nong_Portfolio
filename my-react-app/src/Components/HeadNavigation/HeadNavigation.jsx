@@ -76,7 +76,7 @@ function HeadNavigation() {
         <span className="dsNav__topBar-line" />
       </div>
 
-      <ul className="dsNav__list" role="list">
+      <ul className="dsNav__list">
         {items.map(({ to, label, Icon }, i) => {
           const isActive = location.pathname === to;
           return (
