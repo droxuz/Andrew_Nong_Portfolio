@@ -34,11 +34,16 @@ jobs:
         run: npm run build
         working-directory: my-react-app
 
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@users.noreply.github.com"
+        working-directory: my-react-app
+
       - name: Deploy to gh-pages
         run: |
           npx gh-pages -d build \
-            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            -r https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         working-directory: my-react-app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
