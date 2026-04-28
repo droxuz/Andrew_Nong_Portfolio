@@ -1,100 +1,236 @@
 @font-face {
-    font-family: 'OptimusPrincepsSemiBold';
-    src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
-         url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'OptimusPrincepsSemiBold';
+  src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
+       url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'OptimusPrinceps';
-    src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
-         url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'OptimusPrinceps';
+  src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
+       url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Root container ──────────────────────────────────────────── */
 .LandingContainer {
+  position: relative;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background: #060501;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: #060501;
-  color: white;
-  text-align: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'OptimusPrinceps', 'Palatino Linotype', serif;
+  user-select: none;
 }
 
-/* Hero Section */
+/* ── Radial vignette ─────────────────────────────────────────── */
+.Vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 92%, #3a1a0018 0%, transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 38%, #060501 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Horizontal scratch line ─────────────────────────────────── */
+.ScratchLine {
+  position: absolute;
+  top: 38%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #ffffff44 20%,
+    #ffffff88 50%,
+    #ffffff44 80%,
+    transparent 100%
+  );
+  transform-origin: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Ember layer ─────────────────────────────────────────────── */
+.EmberLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Version info (top-left) ─────────────────────────────────── */
+.VersionInfo {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  color: #999;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  line-height: 1.75;
+  font-family: 'Courier New', monospace;
+  z-index: 5;
+}
+
+/* ── Hero section ────────────────────────────────────────────── */
 .HeroSection {
-  margin-bottom: 4rem;
-}
-
-.Greeting {
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin: 0;
-  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 5vh;
 }
 
 .SubTitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  margin-top: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'OptimusPrinceps', serif;
+  font-size: clamp(9px, 1.1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
+  color: #b8a070;
+  margin-bottom: 0.5em;
+  opacity: 0.75;
 }
 
-/* Navigation */
+.Greeting {
+  font-family: 'OptimusPrincepsSemiBold', serif;
+  font-size: clamp(52px, 10vw, 138px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 60px #ffffff10,
+    0 2px 0 #00000088,
+    0 6px 32px #00000066;
+}
+
+.RomanNumeral {
+  /* keep numerals visually consistent with the rest of the title */
+  font-variant-numeric: normal;
+  letter-spacing: 0.02em;
+}
+
+/* ── Navigation ──────────────────────────────────────────────── */
 .NavigationBlock {
+  position: relative;
+  z-index: 5;
   width: 100%;
+  text-align: center;
+}
+
+.Chevron {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin: 4px 0;
 }
 
 .NavigationList {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.NavigationList li {
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 3rem;
 }
 
+/* ── Nav item ────────────────────────────────────────────────── */
 .NavItem {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  letter-spacing: 0.2em;
   position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
+  display: inline-block;
+  padding: 6px 48px;
+  text-decoration: none;
+  font-family: 'OptimusPrinceps', serif;
+  font-size: clamp(13px, 1.55vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #c0b89e;
+  text-transform: none;
+  transition: color 0.15s ease;
+  cursor: pointer;
 }
 
-/* Modern underline animation */
-.NavItem::after {
-  content: "";
+.NavItem--active {
+  color: #e8c97a;
+  font-family: 'OptimusPrincepsSemiBold', serif;
+  font-weight: 600;
+}
+
+/* amber glow bar (rendered via JS motion span) */
+.NavGlow {
   position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #c8860a20 25%,
+    #c8860a38 50%,
+    #c8860a20 75%,
+    transparent 100%
+  );
+  border-top: 1px solid #c8860a38;
+  border-bottom: 1px solid #c8860a38;
+  transform-origin: center;
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.FooterCredits {
+  position: absolute;
+  bottom: 18px;
   left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0%;
-  background: rgb(208, 100, 64);
-  transition: width 0.3s ease;
+  right: 0;
+  text-align: center;
+  font-family: 'OptimusPrinceps', serif;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: #666;
+  z-index: 5;
 }
 
-.NavItem:hover {
-  color: rgb(208, 100, 64);
-}
-
-.NavItem:hover::after {
-  width: 100%;
-}
-
-/* Responsive */
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .NavigationList {
-    flex-direction: column;
-    gap: 1.5rem;
+  .Greeting {
+    font-size: clamp(38px, 14vw, 72px);
+  }
+
+  .VersionInfo {
+    font-size: 9px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .NavItem {
+    padding: 6px 28px;
+    font-size: 14px;
   }
 }

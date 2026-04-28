@@ -1,133 +1,244 @@
 @font-face {
-    font-family: 'OptimusPrincepsSemiBold';
-    src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
-         url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'OptimusPrincepsSemiBold';
+  src: url('../../Fonts/subset-OptimusPrincepsSemiBold.woff2') format('woff2'),
+       url('../../Fonts/subset-OptimusPrincepsSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'OptimusPrinceps';
-    src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
-         url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'OptimusPrinceps';
+  src: url('../../Fonts/subset-OptimusPrinceps.woff2') format('woff2'),
+       url('../../Fonts/subset-OptimusPrinceps.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-.rpgNav {
+/* ── Tokens ──────────────────────────────────────────────────── */
+:root {
+  --ds-gold:        #c9a84c;
+  --ds-gold-dim:    #7a6230;
+  --ds-gold-bright: #e8c97a;
+  --ds-ember:       rgb(208, 100, 64);
+  --ds-panel-bg:    rgba(12, 10, 7, 0.93);
+  --ds-panel-edge:  rgba(180, 140, 60, 0.35);
+  --ds-slot-bg:     rgba(30, 24, 14, 0.9);
+  --ds-slot-active: rgba(60, 46, 18, 0.95);
+  --ds-text:        rgba(220, 210, 185, 0.9);
+  --ds-text-dim:    rgba(160, 148, 120, 0.7);
+}
+
+/* ── Nav shell ───────────────────────────────────────────────── */
+.dsNav {
   position: fixed;
   top: 1rem;
-
-  /* Proper centering without transform */
   left: 0;
   right: 0;
   margin: 0 auto;
-
   width: fit-content;
   max-width: calc(100vw - 2rem);
+  z-index: 100;
 
-  padding: 0.85rem 2.1rem;
-  border-radius: 14px;
+  background: var(--ds-panel-bg);
+  border: 1px solid var(--ds-panel-edge);
+  border-radius: 4px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(10, 9, 7, 0.92) 0%,
-    rgba(6, 5, 1, 0.88) 60%,
-    rgba(6, 5, 1, 0.82) 100%
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
+  /* layered shadow: outer darkness + faint ember glow */
   box-shadow:
-    0 12px 34px rgba(0, 0, 0, 0.65),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.7),
-    0 0 24px rgba(208, 100, 64, 0.06);
+    0 16px 48px rgba(0, 0, 0, 0.75),
+    0 2px 0 rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(200, 168, 80, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+    0 0 32px rgba(208, 100, 64, 0.04);
+
+  /* subtle parchment noise texture via SVG data URI */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(18,15,9,0.95) 0%, rgba(10,8,4,0.93) 100%);
 }
 
-.rpgNavList {
+/* ── Top / bottom filigree bars ──────────────────────────────── */
+.dsNav__topBar,
+.dsNav__bottomBar {
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  height: 6px;
+  gap: 0;
+}
+
+.dsNav__topBar { border-bottom: 1px solid rgba(180, 140, 60, 0.18); }
+.dsNav__bottomBar { border-top: 1px solid rgba(180, 140, 60, 0.18); }
+
+.dsNav__topBar-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ds-gold-dim), transparent);
+}
+
+.dsNav__topBar-diamond {
+  width: 5px;
+  height: 5px;
+  background: var(--ds-gold-dim);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin: 0 6px;
+}
+
+/* ── Tab list ────────────────────────────────────────────────── */
+.dsNav__list {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem 0;
+}
+
+.dsNav__item {
+  display: flex;
+}
+
+/* ── Individual tab ──────────────────────────────────────────── */
+.dsNav__tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem 0.9rem 0.6rem;
+  text-decoration: none;
+  border-radius: 3px 3px 0 0;
+  transition: background 180ms ease;
+  width: 7rem;
+  justify-content: center;
+  /* default: slightly recessed */
+  background: var(--ds-slot-bg);
+  border: 1px solid rgba(140, 110, 40, 0.2);
+  border-bottom: none;
+  transform: translateY(2px);
+}
+
+.dsNav__tab:hover {
+  background: rgba(45, 36, 16, 0.92);
+  border-color: rgba(180, 140, 60, 0.32);
+}
+
+/* active tab sits higher (raised) */
+.dsNav__tab--active {
+  background: var(--ds-slot-active);
+  border-color: rgba(200, 165, 70, 0.5);
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* ── Icon slot ───────────────────────────────────────────────── */
+.dsNav__iconSlot {
+  position: relative;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  border-radius: 2px;
+
+  background: radial-gradient(ellipse at 40% 35%, rgba(80, 62, 20, 0.6) 0%, rgba(20, 16, 6, 0.9) 100%);
+  border: 1px solid rgba(160, 124, 48, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(200, 168, 80, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+
+  color: var(--ds-text-dim);
+  transition: color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.rpgNavItem {
-  display: flex;
-  align-items: center;
+.dsNav__iconSlot svg {
+  width: 16px;
+  height: 16px;
 }
 
-.rpgNavLink {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: 'OptimusPrincepsSemiBold', Verdana, Geneva, Tahoma, sans-serif;
-
-  letter-spacing: 0.14em;
-  font-size: 1rem;
-
-  padding: 0.25rem 0.15rem 0.35rem;
-  transition: color 180ms ease;
+/* active icon: gold tint */
+.dsNav__tab--active .dsNav__iconSlot {
+  color: var(--ds-gold);
+  border-color: rgba(200, 165, 70, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(220, 185, 90, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(200, 150, 40, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Ember underline as a separate span (more controllable than ::after) */
-.rpgUnderline {
+.dsNav__tab:hover .dsNav__iconSlot {
+  color: var(--ds-gold-bright);
+  border-color: rgba(200, 165, 70, 0.4);
+}
+
+/* shimmer overlay on active icon slot */
+.dsNav__iconShimmer {
   position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  background: radial-gradient(ellipse at 40% 30%, rgba(210, 170, 60, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Label ───────────────────────────────────────────────────── */
+.dsNav__label {
+  font-family: 'OptimusPrinceps', 'Palatino Linotype', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ds-text-dim);
+  transition: color 180ms ease;
+  white-space: nowrap;
+}
+
+.dsNav__tab--active .dsNav__label {
+  color: var(--ds-gold-bright);
+}
+
+.dsNav__tab:hover .dsNav__label {
+  color: var(--ds-text);
+}
+
+/* ── Active indicator bar (framer layoutId) ──────────────────── */
+.dsNav__activeBar {
+  position: absolute;
+  bottom: -1px;
   left: 0;
-  bottom: 0;
+  right: 0;
   height: 2px;
-  width: 0%;
+  background: linear-gradient(90deg, transparent 0%, var(--ds-gold) 40%, var(--ds-gold-bright) 50%, var(--ds-gold) 60%, transparent 100%);
+  box-shadow: 0 0 8px rgba(200, 168, 60, 0.5);
   border-radius: 999px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(208, 100, 64, 0) 0%,
-    rgba(208, 100, 64, 0.95) 40%,
-    rgba(208, 100, 64, 0.65) 100%
-  );
-
-  box-shadow: 0 0 10px rgba(208, 100, 64, 0.25);
-  transition: width 220ms ease;
 }
 
-.rpgNavLink:hover {
-  color: rgb(208, 100, 64);
-}
-
-.rpgNavLink:hover .rpgUnderline {
-  width: 100%;
-}
-
-/* Active route: always lit */
-.rpgNavLink.active {
-  color: rgb(208, 100, 64);
-}
-
-.rpgNavLink.active .rpgUnderline {
-  width: 100%;
-}
-
-/* Mobile: keep centered, wrap if needed */
-@media (max-width: 720px) {
-  .rpgNav {
-    padding: 0.75rem 1.2rem;
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .dsNav__list {
+    gap: 0.15rem;
+    padding: 0.4rem 0.5rem 0;
   }
 
-  .rpgNavList {
-    gap: 1.25rem;
-    flex-wrap: wrap;
+  .dsNav__tab {
+    padding: 0.45rem 0.6rem 0.5rem;
   }
 
-  .rpgNavLink {
-    font-size: 0.95rem;
+  .dsNav__iconSlot {
+    width: 26px;
+    height: 26px;
+  }
+
+  .dsNav__iconSlot svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .dsNav__label {
+    font-size: 0.55rem;
     letter-spacing: 0.12em;
   }
 }
