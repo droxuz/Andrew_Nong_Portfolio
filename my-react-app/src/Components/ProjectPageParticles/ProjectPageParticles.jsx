@@ -1,12 +1,10 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-
-
+import { loadSlim } from "@tsparticles/slim";
 
 const ProjectPageParticles = (props) => {
-
   const [init, setInit] = useState(false);
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -18,7 +16,6 @@ const ProjectPageParticles = (props) => {
   const particlesLoaded = (container) => {
     console.log(container);
   };
-
 
   const options = useMemo(
     () => ({
@@ -36,17 +33,17 @@ const ProjectPageParticles = (props) => {
           },
           onHover: {
             enable: true,
-            mode: 'attract',
+            mode: "attract",
           },
         },
         modes: {
           push: {
-            quantity:5,
+            quantity: 5,
           },
           attract: {
             distance: 175,
             duration: 5,
-            factor:0.5,
+            factor: 0.5,
           },
         },
       },
@@ -56,7 +53,7 @@ const ProjectPageParticles = (props) => {
             "rgba(210, 70, 21, 1)",
             "rgb(207, 39, 2)",
             "rgb(134, 42, 5)",
-          ] 
+          ],
         },
         links: {
           color: "rgba(0,0,0,0.5)",
@@ -82,11 +79,7 @@ const ProjectPageParticles = (props) => {
           value: 125,
         },
         opacity: {
-          value: [
-            "1.0",
-            "0.5",
-            "0.8",
-          ]
+          value: ["1.0", "0.5", "0.8"],
         },
         shape: {
           type: "circle",
@@ -97,11 +90,18 @@ const ProjectPageParticles = (props) => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
+  if (!init) return null;
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return (
+    <Particles
+      id={props.id}
+      particlesLoaded={particlesLoaded}
+      options={options}
+    />
+  );
 };
 
 export default ProjectPageParticles;
