@@ -82,12 +82,6 @@ export default function ContactPageInfo() {
           </motion.a>
         ))}
       </div>
-
-      <footer className="contactFooter">
-        <p className="contactFooterText">
-           
-        </p>
-      </footer>
     </section>
   );
 }

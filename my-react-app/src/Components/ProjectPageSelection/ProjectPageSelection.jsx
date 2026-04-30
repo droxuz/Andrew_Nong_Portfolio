@@ -5,6 +5,7 @@ import HideoutHelperImage from "../../Elements/HideoutHelperImage.png";
 import TiltTerrainImage from "../../Elements/rc_car.jpeg";
 import WaterWizardImage from "../../Elements/WaterWizard.jpg";
 import PlatePlanImage from "../../Elements/PlatePlan.png";
+import PowderPredictorImage from "../../Elements/PowderPredictorImage.png";
 
 export default function ProjectCards({
   projects = [
@@ -22,8 +23,8 @@ export default function ProjectCards({
       title: "HideoutHelper",
       description:
         "Web app for Escape From Tarkov players to track hideout upgrades. Built with HTML/CSS/JavaScript and Firebase (Firestore + hosting) to learn full-stack fundamentals and NoSQL design.",
-      href: "https://github.com/droxuz/HideoutHelper",
-      linkLabel: "GitHub Repo",
+      href: "https://hideouthelper-7c1a6.web.app/",
+      linkLabel: "ENTER",
       image: { src: HideoutHelperImage, alt: "HideoutHelper project preview" },
       keywords: ["Firebase", "NoSQL", "Web App"],
       meta: "JavaScript • Firestore • Full-Stack • UI/UX",
@@ -33,7 +34,7 @@ export default function ProjectCards({
       description:
         "Designed and implemented in SystemVerilog on a DE10-Lite board, integrating SPI-based sensor acquisition and PWM motor control for real-time speed and direction adjustment. Ultrasonic sensing enabled obstacle detection, while ESP32 wireless communication provide remote control capability.",
       href: "https://github.com/droxuz/fpga-rc-car",
-      linkLabel: "ZIP File",
+      linkLabel: "Github",
       image: { src: TiltTerrainImage, alt: "FPGA Bluetooth-Controlled Car project preview" },
       keywords: ["FPGA", "SystemVerilog", "Embedded"],
       meta: "DE10-Lite • ESP32 • SPI • Motor Control • Ultrasonic Sensor",
@@ -43,17 +44,25 @@ export default function ProjectCards({
       description:
         "Standalone Java + PostgreSQL restaurant management system with reservations, table management, menus, analytics-ready data, and authentication. Built with a team; Java Swing for GUI.",
       href: "https://github.com/droxuz/Plate_Plan",
-      linkLabel: "GitHub Repo",
+      linkLabel: "GitHub",
       image: { src: PlatePlanImage, alt: "PlatePlan project preview" },
       keywords: ["Java", "PostgreSQL", "Full Stack"],
       meta: "Desktop app • Auth • CRUD • Reporting",
+    },
+    {
+      title: "POWDERPREDICTOR",
+      description:"Web application designed around skiers and snowboarders to give a quick weather summary of the conditions on the slopes nearby Toronto, Ontario. Outlining optimal timeframes, lift risks, and general weather overview. Introduces the powder score that takes into account all weather conditions for a score of 0-100",
+      href: "https://powder-predictor.vercel.app/",
+      linkLabel:"ENTER",
+      image: {src: PowderPredictorImage, alt: "PowderPredictor project preview" },
+      keywords: ["Next.js", "PostgreSQL", "Weather API"],
+      meta: "Next.js • Open-Meteo API • Neon PostgreSQL • Data Aggregation • Forecasting"
     },
   ],
 }) {
   const [active, setActive] = useState(null);
 
   const activeProject = useMemo(() => {if (active == null) return null; return projects[active] ?? null;}, [active, projects]);
-  //Whenever active or projects changes recalculate activeProject. If active is null, return null. Otherwise return projects[active] if it exists, else return null.
 
   const preloadProject = async (idx) => {
   const src = projects[idx]?.image?.src;

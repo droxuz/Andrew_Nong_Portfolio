@@ -112,9 +112,12 @@
   text-decoration: none;
   border-radius: 3px 3px 0 0;
   transition: background 180ms ease;
-  width: 7rem;
+  flex: 1 1 120px;      
+  max-width: 180px;     
+  min-width: 90px;      
+
   justify-content: center;
-  /* default: slightly recessed */
+
   background: var(--ds-slot-bg);
   border: 1px solid rgba(140, 110, 40, 0.2);
   border-bottom: none;
