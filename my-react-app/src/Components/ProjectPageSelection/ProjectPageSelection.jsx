@@ -6,6 +6,7 @@ import TiltTerrainImage from "../../Elements/rc_car.jpeg";
 import WaterWizardImage from "../../Elements/WaterWizard.jpg";
 import PlatePlanImage from "../../Elements/PlatePlan.png";
 import PowderPredictorImage from "../../Elements/PowderPredictorImage.png";
+import AnimeNERPipelineImage from "../../Elements/anime_ner_pipeline.png";
 
 export default function ProjectCards({
   projects = [
@@ -59,6 +60,16 @@ export default function ProjectCards({
       keywords: ["Full-Stack", "Next.js", "API Integration"],
       meta: "Next.js • TypeScript • PostgreSQL • Open-Meteo API • Data Aggregation • Forecasting",
     },
+    {
+      title: "Anime NER",
+      description:
+        "Learning the basics of data science through a recommendation system, which led to NLP method of NER to ascertain tags related to title, genre, theme using the BIO tagging system. Which will further be combined with a content based filtering system. Currently in progress.",
+      href: "https://github.com/droxuz/anime-ner-transformer",
+      linkLabel: "GitHub Repo",
+      image: { src: AnimeNERPipelineImage, alt: "Anime prompt NER system" },
+      keywords: ["Python", "NLP", "NER"],
+      meta: "Python • PyTorch • HuggingFace • pandas",
+    },
   ],
 }) {
   const [active, setActive] = useState(null);
@@ -77,12 +88,13 @@ export default function ProjectCards({
 
   return (
     <section className="projectsSection">
-      <header className="projectsHeader">
+      {/*<header className="projectsHeader">
         <h2 className="projectsTitle">Projects</h2>
         <p className="projectsSubtitle">
           Selected work across hardware, web, and software systems.
         </p>
       </header>
+      */}
 
       <div className="projectsGrid">
         {projects.map((p, idx) => (
